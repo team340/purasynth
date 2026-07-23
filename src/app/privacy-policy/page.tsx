@@ -142,11 +142,6 @@ const sections: readonly LegalSection[] = [
               'Orders are written to a Supabase Postgres database hosted in a United States region. Access is restricted to the owner through a service-role key held as a server environment variable and never exposed to the browser.',
           },
           {
-            term: 'Order alerts — Web3Forms',
-            detail:
-              'A copy of each order is emailed to the owner through Web3Forms, an email delivery service, so nothing sits unread waiting for someone to log in.',
-          },
-          {
             term: 'The site itself — Netlify',
             detail:
               'Pages and the order route run on Netlify, which keeps standard access logs on its own infrastructure.',
@@ -185,7 +180,7 @@ const sections: readonly LegalSection[] = [
           {
             term: 'Service providers listed above',
             detail:
-              'Supabase, Web3Forms and Netlify process data on the owner’s instructions in order to run the shop. They are not permitted to use it for their own purposes.',
+              'Supabase and Netlify process data on the owner’s instructions in order to run the shop. They are not permitted to use it for their own purposes.',
           },
           {
             term: 'Where the law requires it',

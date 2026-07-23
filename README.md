@@ -20,13 +20,16 @@ POST /api/order   →  basket is re-priced server-side from src/lib/products.ts
         ↓
 order row inserted into Supabase          (must succeed, or the customer sees an error)
         ↓
-email alert fired via Web3Forms           (best effort — never fails a saved order)
-        ↓
-owner confirms fitment, then emails an invoice with a secure payment link
+owner reads it at /admin, confirms fitment, then emails an invoice with a payment link
 ```
 
 The customer sees an order number immediately at `/order-confirmed`. The owner
-sees the order two ways: an email in the inbox, and the dashboard at `/admin`.
+reads new orders on the dashboard at `/admin`, which queries the same table the
+order route writes to — so an order appears the moment the insert commits.
+
+There is deliberately no email-alert provider in the chain. One less service to
+sign up for, one less key to rotate, and no failure mode where an order is
+safely stored but the notification silently never arrives.
 
 ---
 
@@ -44,7 +47,6 @@ the cart all work. What breaks without them:
 | Missing                                        | Effect                                                        |
 | ---------------------------------------------- | ------------------------------------------------------------- |
 | `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY`   | Checkout returns a 502 and tells the customer to email instead |
-| `WEB3FORMS_ACCESS_KEY`                         | No email alert. Orders still save and still show in `/admin`   |
 | `ADMIN_PASSWORD` / `ADMIN_SESSION_SECRET`      | `/admin` shows a setup notice and refuses to log anyone in     |
 | `NEXT_PUBLIC_SITE_URL`                         | Canonicals and the sitemap fall back to the Netlify subdomain  |
 
@@ -66,15 +68,7 @@ role key gets in, and it is used exclusively from `server-only` modules.
 > Never give the service role key a `NEXT_PUBLIC_` prefix. That would ship your
 > customers' names, phone numbers and addresses to every visitor's browser.
 
-### 2. Web3Forms (order email alerts)
-
-1. Go to [web3forms.com](https://web3forms.com), enter the inbox that should
-   receive order alerts, and copy the access key it gives you.
-2. Set `WEB3FORMS_ACCESS_KEY` and, if it differs, `ORDER_NOTIFICATION_EMAIL`.
-
-No account, no SMTP credentials, no verified sending domain needed.
-
-### 3. Admin dashboard
+### 2. Admin dashboard
 
 ```bash
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
@@ -120,8 +114,7 @@ src/
     site.ts               brand, address, nav — single source of truth
     products.ts           the catalogue AND the only source of pricing
     order-schema.ts       zod schema shared by the form and the API
-    orders.ts             Supabase writes (server-only)
-    notify.ts             Web3Forms alerts (server-only, never throws)
+    orders.ts             Supabase reads + writes (server-only)
     admin-auth.ts         signed-cookie session for one operator
     seo.ts                metadata builders + every JSON-LD block
 supabase/schema.sql       run this once in the Supabase SQL editor

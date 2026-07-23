@@ -49,7 +49,7 @@ code path that trusts a price from the browser.
 
 ## Server / client boundary
 
-`src/lib/orders.ts`, `supabase.ts`, `notify.ts` and `admin-auth.ts` are
+`src/lib/orders.ts`, `supabase.ts` and `admin-auth.ts` are
 `server-only`. Types that client components need live in `src/lib/order-types.ts`
 so importing a type never drags the Supabase service-role client into the browser
 bundle. Keep it that way.

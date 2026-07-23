@@ -1,7 +1,6 @@
 import type { NextRequest } from 'next/server'
 
 import { MAX_QTY_PER_LINE, lineKey } from '@/lib/cart-store'
-import { notifyNewOrder } from '@/lib/notify'
 import {
   orderSchema,
   type OrderApiResponse,
@@ -299,14 +298,8 @@ export async function POST(request: NextRequest): Promise<Response> {
     )
   }
 
-  // The order is already stored, so a mail outage must not fail the request.
-  const notified = await notifyNewOrder(order, priced)
-
-  if (notified === 'failed') {
-    console.error(
-      `[purasynth] Order ${priced.orderNumber} saved but the alert email failed.`
-    )
-  }
-
+  // Stored is the whole job. There is no email step: the dashboard at /admin
+  // reads straight from the same table, so an order is visible the moment this
+  // insert commits, and there is no delivery provider in between to fail.
   return json({ success: true, orderNumber: priced.orderNumber }, 201)
 }
