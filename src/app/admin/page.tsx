@@ -69,8 +69,8 @@ export default async function AdminPage() {
         <div>
           <h1 className="text-4xl">Orders</h1>
           <p className="mt-2 text-sm text-slate">
-            Everyone who has placed an order. Nothing here has been charged —
-            confirm the fitment, then email the invoice.
+            Everyone who has placed an order. Nothing here has been charged.
+            Confirm the fitment, then email the invoice.
           </p>
         </div>
 

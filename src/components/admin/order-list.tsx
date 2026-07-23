@@ -14,14 +14,13 @@ import {
   Truck,
 } from 'lucide-react'
 
-import { PAYMENT_PREFERENCES } from '@/lib/order-schema'
 import {
   ORDER_STATUSES,
   STATUS_LABELS,
   type OrderRecord,
   type OrderStatus,
-  type PaymentPreference,
 } from '@/lib/order-types'
+import { paymentMethodLabel } from '@/lib/payment-methods'
 import { cn, formatDateTime, formatPrice } from '@/lib/utils'
 
 /**
@@ -41,13 +40,6 @@ const statusStyles: Readonly<Record<OrderStatus, string>> = {
   paid: 'bg-lime text-ink',
   shipped: 'bg-volt text-paper',
   cancelled: 'bg-line text-slate',
-}
-
-function paymentLabel(preference: PaymentPreference): string {
-  return (
-    PAYMENT_PREFERENCES.find((option) => option.id === preference)?.label ??
-    preference
-  )
 }
 
 function fullAddress(order: OrderRecord): string {
@@ -325,7 +317,7 @@ export function OrderList({ orders }: OrderListProps) {
                             Truck
                           </h3>
                           <p className="text-sm">
-                            {order.vehicle ?? 'Not given — confirm before shipping.'}
+                            {order.vehicle ?? 'Not given. Confirm before shipping.'}
                           </p>
 
                           {order.notes ? (
@@ -385,8 +377,10 @@ export function OrderList({ orders }: OrderListProps) {
                           <div className="rounded-md border-2 border-ink bg-lime-soft p-3">
                             <p className="text-xs leading-relaxed">
                               Wants to pay by{' '}
-                              <strong>{paymentLabel(order.paymentPreference)}</strong>
-                              . Nothing has been charged — confirm the fitment,
+                              <strong>
+                                {paymentMethodLabel(order.paymentPreference)}
+                              </strong>
+                              . Nothing has been charged. Confirm the fitment,
                               then email a {formatPrice(order.totalCents)}{' '}
                               invoice to {order.email}.
                             </p>

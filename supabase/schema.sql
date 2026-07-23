@@ -56,7 +56,7 @@ create table if not exists public.orders (
   -- there is no payment gateway on this site. An invoice with a payment link
   -- is emailed once fitment is confirmed.
   payment_preference  text        not null
-    check (payment_preference in ('card-link', 'bank-transfer', 'financing')),
+    check (payment_preference in ('card', 'apple-pay', 'google-pay', 'bank-transfer')),
 
   status              text        not null default 'new'
     check (status in ('new', 'contacted', 'invoiced', 'paid', 'shipped', 'cancelled')),

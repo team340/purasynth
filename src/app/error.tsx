@@ -47,7 +47,7 @@ export default function ErrorPage({
 
           <p className="text-lg leading-relaxed text-slate">
             A part of this page failed to load. Nothing has been charged and
-            nothing in your cart has changed — try again, and if it keeps
+            nothing in your cart has changed. Try again, and if it keeps
             happening, email{' '}
             <a
               href={`mailto:${site.email}`}

@@ -202,7 +202,7 @@ export function CartPageContent() {
               <dt className="text-slate">Freight</dt>
               <dd className="font-semibold text-volt-deep">
                 {totals.shipping === 0
-                  ? 'Free — lower 48'
+                  ? 'Free to the lower 48'
                   : formatPrice(totals.shipping)}
               </dd>
             </div>
@@ -244,7 +244,7 @@ export function CartPageContent() {
           <p className="text-[0.88rem] leading-relaxed font-medium text-graphite">
             <span className="font-bold">Freight is on us.</span> Every set ships
             free to any address in the lower 48. Alaska, Hawaii and outside the US
-            are quoted individually — email {site.email} before ordering.
+            are quoted individually, so email {site.email} before ordering.
           </p>
         </div>
       </div>

@@ -71,7 +71,7 @@ function feedXml(): string {
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">',
     '  <channel>',
-    tag('title', `${site.name} — dually wheel sets`),
+    tag('title', `${site.name} dually wheel sets`),
     tag('link', site.url),
     tag('description', site.shortDescription),
     ...products.map(itemXml),

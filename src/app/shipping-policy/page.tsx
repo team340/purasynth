@@ -10,7 +10,7 @@ import { site } from '@/lib/site'
 
 const PAGE_TITLE = 'Shipping Policy'
 const PAGE_DESCRIPTION =
-  'Free freight to the lower 48, 1–2 business day handling after a paid invoice and 3–7 business days in transit. What curbside freight delivery involves, why someone must be present, and how to inspect a pallet before signing for it.'
+  'Free freight to the lower 48, handling in 1 to 2 business days after a paid invoice and 3 to 7 business days in transit. What curbside freight delivery involves, why someone must be present, and how to inspect a pallet before signing for it.'
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -32,7 +32,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Every wheel set ships free to any address in the 48 contiguous United States. The price on the product page is the price of the whole pallet delivered — there is no freight line added at the invoice stage and no fuel surcharge to discover later.',
+          'Every wheel set ships free to any address in the 48 contiguous United States. The price on the product page is the price of the whole pallet delivered. There is no freight line added at the invoice stage and no fuel surcharge to discover later.',
       },
       {
         kind: 'text',
@@ -41,7 +41,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'callout',
         value:
-          'Six 22-inch wheels weigh enough that they cannot go by parcel courier. Every order moves on a pallet by LTL freight, and that changes what delivery day looks like — the sections below are worth reading before the truck turns up.',
+          'Six 22-inch wheels weigh enough that they cannot go by parcel courier. Every order moves on a pallet by LTL freight, and that changes what delivery day looks like. The sections below are worth reading before the truck turns up.',
         tone: 'volt',
       },
     ],
@@ -53,7 +53,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Nothing is picked or packed until an invoice has been paid. Because no payment is taken on this site, the clock starts when your invoice clears — not when the order was submitted.',
+          'Nothing is picked or packed until an invoice has been paid. Because no payment is taken on this site, the clock starts when your invoice clears, not when the order was submitted.',
       },
       {
         kind: 'steps',
@@ -61,7 +61,7 @@ const sections: readonly LegalSection[] = [
           'Order placed on the site. Nothing charged, nothing packed.',
           `Fitment confirmed against your vehicle and an invoice emailed, normally within ${site.responseWindow}.`,
           'Invoice paid.',
-          'Wheels picked, wrapped and palletised within 1–2 business days of that payment.',
+          'Wheels picked, wrapped and palletised within 1 to 2 business days of that payment.',
           'Freight booked and a tracking number emailed the same day the pallet is collected.',
         ],
       },
@@ -105,7 +105,7 @@ const sections: readonly LegalSection[] = [
         kind: 'bullets',
         items: [
           'The truck is a full-size freight vehicle. It needs a road it can turn around on and enough clearance to stop safely.',
-          'Delivery is to the curb or the end of the driveway — not into a garage, not up a driveway, not around the back of a property.',
+          'Delivery is to the curb or the end of the driveway, not into a garage, not up a driveway, not around the back of a property.',
           'The driver is not required to help move the pallet onto your property, and most carriers do not permit it.',
           'A liftgate lowers the pallet to ground level where one is fitted. Not every truck has one, so say at the order stage if you have no forklift or loading dock and one will be requested on the booking.',
           'Plan for two people and a hand truck, or a dolly, to move six wheels once the pallet is on the ground.',
@@ -134,7 +134,7 @@ const sections: readonly LegalSection[] = [
           'Most carriers call ahead to arrange a delivery window, which is why a working phone number is required at checkout.',
           'Answer that call. An unreachable consignee is the most common cause of a pallet sitting at a terminal.',
           'A missed delivery usually means the pallet returns to the terminal, and the carrier may charge a redelivery or storage fee. That fee is passed on at cost.',
-          'You may arrange to collect from the terminal instead if that suits you better — ask and the terminal details will be sent.',
+          'You may arrange to collect from the terminal instead if that suits you better. Ask and the terminal details will be sent.',
         ],
       },
     ],
@@ -146,7 +146,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'callout',
         value:
-          'Signing a clean delivery receipt tells the carrier the freight arrived undamaged. Once that signature is on the paperwork, a damage claim becomes very hard to win — for you and for us. Take the two minutes.',
+          'Signing a clean delivery receipt tells the carrier the freight arrived undamaged. Once that signature is on the paperwork, a damage claim becomes very hard to win, both for you and for us. Take the two minutes.',
         tone: 'coral',
       },
       {
@@ -155,7 +155,7 @@ const sections: readonly LegalSection[] = [
           'Before the driver leaves, walk the pallet. Look at the shrink wrap, the corners, the strapping and the box edges.',
           'Photograph the pallet while it is still on the truck or on the ground next to it, from a few angles, with the wrap intact.',
           'Open it if anything looks wrong. You are entitled to inspect before signing.',
-          'If there is any damage — even a scuff you are unsure about — write it on the delivery receipt before signing. Words like “box crushed on one corner, wheels not yet inspected” are enough and they preserve the claim.',
+          'If there is any damage, even a scuff you are unsure about, write it on the delivery receipt before signing. Words like “box crushed on one corner, wheels not yet inspected” are enough and they preserve the claim.',
           `Email the photos and the noted receipt to ${site.email} the same day.`,
         ],
       },
@@ -173,7 +173,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'bullets',
         items: [
-          'Count the wheels. A set is six — two front, four rear — plus caps and hardware. If the count is short, note it on the receipt exactly as you would note damage.',
+          'Count the wheels. A set is six (two front, four rear) plus caps and hardware. If the count is short, note it on the receipt exactly as you would note damage.',
           'If a pallet is so badly damaged that it is not worth accepting, you may refuse the delivery. Write the reason on the receipt and email the same day so a replacement can be arranged immediately.',
           'Tracking that has not moved for more than three business days is worth an email. Freight can be mis-scanned, and a trace opened early is resolved far faster.',
         ],
@@ -189,7 +189,7 @@ const sections: readonly LegalSection[] = [
         items: [
           'PO boxes are not possible. Freight carriers cannot deliver a pallet to a post office box, and an order with a PO box as the shipping address will be held until a street address is supplied.',
           'APO, FPO and DPO military addresses cannot be served by LTL freight either.',
-          'Commercial addresses with a dock or forklift are the easiest and fastest option. If you have access to one — a workplace, a friend’s shop, your installer — using it is worth doing.',
+          'Commercial addresses with a dock or forklift are the easiest and fastest option. If you have access to one (a workplace, a friend’s shop, your installer), using it is worth doing.',
           'Construction sites, storage yards and addresses without a permanent street presence should be flagged in the order notes before the booking is made.',
         ],
       },
@@ -211,7 +211,7 @@ const sections: readonly LegalSection[] = [
             Email{' '}
             <strong className="font-semibold text-ink">{site.email}</strong>{' '}
             with your full delivery address before ordering and a real number
-            comes back — not an estimate that changes later. Nothing is booked
+            comes back, not an estimate that changes later. Nothing is booked
             until you have seen and accepted that figure.
           </>
         ),
@@ -248,7 +248,7 @@ export default function ShippingPolicyPage() {
     <LegalPage
       title={PAGE_TITLE}
       eyebrow="Freight, explained"
-      intro="Six 22-inch wheels travel on a pallet, not in a parcel van. Here is exactly how that works — the timings, what the driver will and will not do, and the two minutes at the curb that protect you if something arrives damaged."
+      intro="Six 22-inch wheels travel on a pallet, not in a parcel van. Here is exactly how that works: the timings, what the driver will and will not do, and the two minutes at the curb that protect you if something arrives damaged."
       path="/shipping-policy"
       description={PAGE_DESCRIPTION}
       updated={LEGAL_UPDATED}

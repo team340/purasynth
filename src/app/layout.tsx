@@ -35,7 +35,7 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${site.name} — Dually Wheels for Ford, RAM & GM Trucks`,
+    default: `${site.name} | Dually Wheels for Ford, RAM & GM Trucks`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -63,12 +63,12 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: site.locale,
     url: SITE_URL,
-    title: `${site.name} — Dually Wheels That Hit Different`,
+    title: `${site.name} | Dually Wheels That Hit Different`,
     description: site.shortDescription,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.name} — Dually Wheels That Hit Different`,
+    title: `${site.name} | Dually Wheels That Hit Different`,
     description: site.shortDescription,
   },
   robots: {

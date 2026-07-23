@@ -27,7 +27,7 @@ const steps: readonly Step[] = [
   {
     number: '01',
     title: 'Pick your set',
-    body: 'Gloss black or mirror polish, both 22x8.25. Six wheels, caps and lug hardware are in the box either way — you only choose the finish and your bolt pattern.',
+    body: 'Gloss black or mirror polish, both 22x8.25. Six wheels, caps and lug hardware are in the box either way. All you choose is the finish and your bolt pattern.',
     icon: CircleDot,
   },
   {

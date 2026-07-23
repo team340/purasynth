@@ -9,7 +9,7 @@ import { buildMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 
 const PAGE_TITLE = 'Terms of Service'
-const PAGE_DESCRIPTION = `The terms an order with Purasynth is placed under: an order is an offer until fitment is confirmed, no payment is taken on this site, wheels ship without tires or TPMS, professional installation and a 50–100 mile re-torque are required. Governed by ${site.address.region} law.`
+const PAGE_DESCRIPTION = `The terms an order with Purasynth is placed under: an order is an offer until fitment is confirmed, no payment is taken on this site, wheels ship without tires or TPMS, professional installation and a re-torque at 50 to 100 miles are required. Governed by ${site.address.region} law.`
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -25,7 +25,7 @@ const sections: readonly LegalSection[] = [
     blocks: [
       {
         kind: 'text',
-        value: `Purasynth is a ${site.businessType} — one individual, ${site.ownerRole}, trading from ${site.address.locality}, ${site.address.region}. These terms govern your use of this site and any order placed through it. Placing an order means you have read them.`,
+        value: `Purasynth is a ${site.businessType}, ${site.ownerRole} by one individual, trading from ${site.address.locality}, ${site.address.region}. These terms govern your use of this site and any order placed through it. Placing an order means you have read them.`,
       },
       {
         kind: 'text',
@@ -41,7 +41,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Submitting the order form on this site is you offering to buy. It does not create a binding contract by itself, and the on-screen confirmation with your order number is an acknowledgement that the request arrived — not an acceptance of it.',
+          'Submitting the order form on this site is you offering to buy. It does not create a binding contract by itself, and the on-screen confirmation with your order number is an acknowledgement that the request arrived, not an acceptance of it.',
       },
       {
         kind: 'text',
@@ -53,7 +53,7 @@ const sections: readonly LegalSection[] = [
         items: [
           'An order may be declined if the wheels do not fit the vehicle described, if the set is unavailable, if the delivery address cannot take a freight pallet, or if the order looks fraudulent.',
           'If an order is declined you are told why, in writing, and nothing has been charged because nothing could be.',
-          'Cancelling before you pay the invoice costs nothing — reply to the confirmation email and it is done.',
+          'Cancelling before you pay the invoice costs nothing. Reply to the confirmation email and it is done.',
         ],
       },
     ],
@@ -65,13 +65,13 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'callout',
         value:
-          'This site has no payment gateway. No card number, CVV, expiry date or bank detail is collected anywhere on it, and there is no field capable of accepting one. Anything asking you for card details in the name of Purasynth on this domain is not genuine — report it to the email address below.',
+          'This site has no payment gateway. No card number, CVV, expiry date or bank detail is collected anywhere on it, and there is no field capable of accepting one. Anything asking you for card details in the name of Purasynth on this domain is not genuine. Report it to the email address below.',
         tone: 'coral',
       },
       {
         kind: 'text',
         value:
-          'The payment preference chosen at checkout is exactly that — a preference. It records how you would like to settle up so the invoice arrives in a usable form. It authorises nothing.',
+          'The payment preference chosen at checkout is exactly that: a preference. It records whether you would rather settle by card, Apple Pay, Google Pay or bank transfer, so the invoice arrives in a usable form. It authorises nothing.',
       },
       { kind: 'subheading', value: 'How money actually moves' },
       {
@@ -128,7 +128,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'bullets',
         items: [
-          'Giving accurate vehicle details — year, make, model, trim and any modification that changes hubs, brakes, axles or track width.',
+          'Giving accurate vehicle details: year, make, model, trim and any modification that changes hubs, brakes, axles or track width.',
           'Telling us about lifted, converted, re-axled or otherwise altered trucks. A changed axle changes everything downstream of it.',
           'Choosing tires with a load rating that matches the wheel and the axle ratings on your door-jamb sticker.',
           'Having a qualified shop confirm clearance to brake calipers, fenders and any aftermarket bumper or step before mounting tires.',
@@ -146,14 +146,14 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'callout',
         value:
-          'If a set is shipped in the wrong pattern for the vehicle you accurately described, that is our error — return shipping and a corrected set are covered in full. If the vehicle details given were wrong or incomplete, the standard returns policy applies instead.',
+          'If a set is shipped in the wrong pattern for the vehicle you accurately described, that is our error. Return shipping and a corrected set are covered in full. If the vehicle details given were wrong or incomplete, the standard returns policy applies instead.',
         tone: 'volt',
       },
     ],
   },
   {
     id: 'what-you-are-buying',
-    heading: 'What you are buying — and what you are not',
+    heading: 'What you are buying, and what you are not',
     blocks: [
       {
         kind: 'text',
@@ -169,7 +169,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Purasynth does not manufacture wheels. Sets are built to the published specification — flow-formed A356-T6 aluminum, 4,500 lb rated per wheel — and supplied complete. Finishes are described honestly on each product page; polished aluminum is not chrome plating and is not sold as such.',
+          'Purasynth does not manufacture wheels. Sets are built to the published specification (flow-formed A356-T6 aluminum, 4,500 lb rated per wheel) and supplied complete. Finishes are described honestly on each product page; polished aluminum is not chrome plating and is not sold as such.',
       },
       {
         kind: 'text',
@@ -218,7 +218,7 @@ const sections: readonly LegalSection[] = [
         kind: 'bullets',
         items: [
           'Title and risk of loss pass to you when the pallet is delivered and signed for.',
-          'Inspect the pallet before the driver leaves. Damage must be noted on the delivery paperwork at that moment — an unqualified signature makes a freight claim almost impossible to win.',
+          'Inspect the pallet before the driver leaves. Damage must be noted on the delivery paperwork at that moment. An unqualified signature makes a freight claim almost impossible to win.',
           'Delivery dates are estimates. Freight networks are affected by weather and terminal congestion, and a delayed pallet is not itself a breach of these terms.',
         ],
       },
@@ -230,7 +230,7 @@ const sections: readonly LegalSection[] = [
     blocks: [
       {
         kind: 'text',
-        value: `Unmounted wheels in original packaging may be returned within ${site.returnsWindowDays} days. Once tires are mounted the wheels count as used and cannot be returned — this is standard across the wheel trade, so check fitment before anything is mounted.`,
+        value: `Unmounted wheels in original packaging may be returned within ${site.returnsWindowDays} days. Once tires are mounted the wheels count as used and cannot be returned. This is standard across the wheel trade, so check fitment before anything is mounted.`,
       },
       {
         kind: 'text',
@@ -266,7 +266,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Subject to that, and to the fullest extent permitted by law: total liability for any claim arising out of an order is limited to the amount you actually paid for that order. Liability is excluded for indirect, incidental, special or consequential loss — including loss of use of a vehicle, towing costs, rental costs, lost income, lost contracts or missed jobs.',
+          'Subject to that, and to the fullest extent permitted by law: total liability for any claim arising out of an order is limited to the amount you actually paid for that order. Liability is excluded for indirect, incidental, special or consequential loss, including loss of use of a vehicle, towing costs, rental costs, lost income, lost contracts or missed jobs.',
       },
       {
         kind: 'text',
@@ -276,7 +276,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'No liability is accepted for a failure caused by something outside reasonable control — carrier failure, severe weather, strikes, supply interruption or utility outage.',
+          'No liability is accepted for a failure caused by something outside reasonable control: carrier failure, severe weather, strikes, supply interruption or utility outage.',
       },
     ],
   },

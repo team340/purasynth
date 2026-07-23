@@ -45,7 +45,7 @@ export default function HomePage() {
         data={[
           itemListSchema(products),
           webPageSchema({
-            name: `${site.name} — ${title}`,
+            name: `${site.name}: ${title}`,
             description,
             path: '/',
           }),

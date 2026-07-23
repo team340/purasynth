@@ -74,7 +74,7 @@ const benefits: readonly Benefit[] = [
     // No phone line exists, so the heading must not evoke one — "call centre"
     // reads as a promise of phone support the site cannot keep.
     title: 'Email the owner, not a support desk',
-    body: `Purasynth is ${site.ownerRole} from ${site.address.locality}, ${site.address.region}. The email you send reaches the same person who checks your fitment and books the pallet — no ticket queue, no script.`,
+    body: `Purasynth is ${site.ownerRole} from ${site.address.locality}, ${site.address.region}. The email you send reaches the same person who checks your fitment and books the pallet. No ticket queue, no script.`,
     icon: MessageCircle,
     hover: 'hover:bg-volt-soft',
     chip: 'bg-ink text-lime',

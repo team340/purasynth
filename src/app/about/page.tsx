@@ -25,7 +25,7 @@ import { products } from '@/lib/products'
 import { breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/seo'
 import { site } from '@/lib/site'
 
-const PAGE_TITLE = 'Our Story — One Person, Two Wheel Sets, Tomball Texas'
+const PAGE_TITLE = 'Our Story: One Person, Two Wheel Sets, Tomball Texas'
 const PAGE_DESCRIPTION =
   'Purasynth is independently run out of Tomball, Texas by one person. Why dually wheels, why only two sets to start, what flow-formed actually means, and why nobody takes your card details on this site.'
 
@@ -46,7 +46,7 @@ const TIMELINE = [
   {
     marker: String(site.foundedYear),
     title: 'A bad set of wheels and a long drive home',
-    body: 'It started with a set that looked right in the photos and rang like a bell at 65 with a trailer behind me. Wrong center bore, hidden behind a plastic ring. The seller had never asked what I drove — the order page never had a box for it.',
+    body: 'It started with a set that looked right in the photos and rang like a bell at 65 with a trailer behind me. Wrong center bore, hidden behind a plastic ring. The seller had never asked what I drove. The order page never had a box for it.',
   },
   {
     marker: 'Then',
@@ -61,7 +61,7 @@ const TIMELINE = [
   {
     marker: 'Next',
     title: 'More finishes, once these two are right',
-    body: 'New sizes and finishes get added when they are worth adding — not to make the catalogue look busy. If something is coming, it will show up on the shop page and nowhere else first.',
+    body: 'New sizes and finishes get added when they are worth adding, not to make the catalogue look busy. If something is coming, it will show up on the shop page and nowhere else first.',
   },
 ] as const
 
@@ -76,7 +76,7 @@ const FLOW_FORM_STEPS = [
   {
     icon: Package,
     title: 'It starts as a casting',
-    body: 'Molten A356 aluminum is poured into a mould. That alone would be a cast wheel — cheap, heavy, and thick-walled because cast grain is not especially strong.',
+    body: 'Molten A356 aluminum is poured into a mould. That alone would be a cast wheel: cheap, heavy, and thick-walled because cast grain is not especially strong.',
   },
   {
     icon: Hammer,
@@ -101,7 +101,7 @@ const ORDER_STEPS = [
   },
   {
     title: 'An invoice arrives',
-    body: `An emailed invoice with a payment link, inside ${site.responseWindow}. Pay it and the pallet gets booked. Ignore it and nothing happens — no charge, no chasing.`,
+    body: `An emailed invoice with a payment link, inside ${site.responseWindow}. Pay it and the pallet gets booked. Ignore it and nothing happens. No charge, no chasing.`,
   },
 ] as const
 
@@ -168,7 +168,7 @@ export default function AboutPage() {
               <Reveal delay={0.16}>
                 <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate sm:text-xl">
                   Purasynth is independently run out of Tomball, Texas. No call
-                  centre, no sales floor, no ticket queue — when you email, the
+                  centre, no sales floor, no ticket queue. When you email, the
                   person who packed the last pallet is the person who writes
                   back.
                 </p>
@@ -252,7 +252,7 @@ export default function AboutPage() {
             <Reveal>
               <p>
                 Half-ton trucks have a thousand wheel options. Move up to a
-                one-ton dually and the market thins out fast — six wheels
+                one-ton dually and the market thins out fast: six wheels
                 instead of four, two different faces, a hub bore that has to be
                 machined rather than shimmed, and a load rating that actually
                 has to mean something because you are hauling with it.
@@ -284,7 +284,7 @@ export default function AboutPage() {
                   Purasynth carries no testimonials, and a pull-quote with a
                   bare name under it reads like one. */}
               <figcaption className="mt-6 font-mono text-[0.7rem] font-bold tracking-[0.18em] text-slate uppercase">
-                In my own words — I run Purasynth
+                In my own words: I run Purasynth
               </figcaption>
             </figure>
           </Reveal>
@@ -296,7 +296,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="How it got here"
             title="The short version"
-            description="No origin myth. Four steps, in order, and none of them involve a factory — Purasynth spec’s and sells the wheels, it does not forge them."
+            description="No origin myth. Four steps, in order, and none of them involve a factory. Purasynth specs and sells the wheels. It does not forge them."
             tone="coral"
           />
 
@@ -376,8 +376,8 @@ export default function AboutPage() {
             <p className="mt-10 max-w-3xl rounded-lg border-2 border-line bg-cream p-6 text-[1.02rem] leading-relaxed text-slate">
               Flow-formed sits between plain cast and fully forged, on weight
               and on price. That is the honest description, and it is the one
-              used on the product pages too. Purasynth does not forge anything —
-              the sets are built to spec and the center caps carry the maker&rsquo;s
+              used on the product pages too. Purasynth does not forge anything.
+              The sets are built to spec and the center caps carry the maker&rsquo;s
               own marks.
             </p>
           </Reveal>
@@ -449,7 +449,7 @@ export default function AboutPage() {
                   One address. It is the only one there is.
                 </h2>
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate">
-                  There is no phone line — I would rather answer properly in
+                  There is no phone line. I would rather answer properly in
                   writing than half-answer while a pallet strap is in my other
                   hand. Send the truck details and you get a straight answer
                   within {site.responseWindow}.

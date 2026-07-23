@@ -30,12 +30,12 @@ const sections: readonly LegalSection[] = [
     blocks: [
       {
         kind: 'text',
-        value: `You have ${site.returnsWindowDays} days from the day the pallet is delivered to start a return. The request has to be raised inside that window by email — a set that turns up unannounced after the window has closed cannot be accepted.`,
+        value: `You have ${site.returnsWindowDays} days from the day the pallet is delivered to start a return. The request has to be raised inside that window by email. A set that turns up unannounced after the window has closed cannot be accepted.`,
       },
       {
         kind: 'text',
         value:
-          'A return does not need a reason. Changed your mind about the finish, bought the wrong set, decided against the whole project — all fine, as long as the wheels come back in the condition described below.',
+          'A return does not need a reason. Changed your mind about the finish, bought the wrong set, decided against the whole project: all fine, as long as the wheels come back in the condition described below.',
       },
     ],
   },
@@ -52,7 +52,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'bullets',
         items: [
-          'Completely unmounted — no tires ever fitted, not even briefly.',
+          'Completely unmounted, with no tires ever fitted, not even briefly.',
           'In the original boxes with the original inserts, foam and protective film.',
           'All six wheels, both sets of center caps and all lug hardware present.',
           'No mounting marks, no test-fit scuffs on the hub face or lug seats, no curb contact.',
@@ -62,7 +62,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'callout',
         value:
-          'Once tires have been mounted, the wheels are used. Mounting marks the bead seat and the barrel permanently, and no wheel shop anywhere can resell that as new. This is standard across the entire wheel trade — it is not a Purasynth rule. Confirm your fitment before anything goes near a tire machine.',
+          'Once tires have been mounted, the wheels are used. Mounting marks the bead seat and the barrel permanently, and no wheel shop anywhere can resell that as new. This is standard across the entire wheel trade, not a Purasynth rule. Confirm your fitment before anything goes near a tire machine.',
         tone: 'coral',
       },
       {
@@ -96,7 +96,7 @@ const sections: readonly LegalSection[] = [
           </>,
           'Say why it is coming back and confirm no tires were ever mounted.',
           'Attach photos of the wheels and of the boxes they are going back in. This protects you if the carrier damages them on the way.',
-          'A return authorisation and the return address come back by email, normally within one business day. Do not ship anything before you have that authorisation — unauthorised pallets cannot be identified or credited.',
+          'A return authorisation and the return address come back by email, normally within one business day. Do not ship anything before you have that authorisation. Unauthorised pallets cannot be identified or credited.',
           'Repack the wheels exactly as they arrived, palletise and ship. Keep the tracking number.',
           'Once the set arrives it is inspected within two business days and you are told the outcome in writing before any refund is issued.',
         ],
@@ -118,7 +118,7 @@ const sections: readonly LegalSection[] = [
           {
             term: 'We got it wrong',
             detail:
-              'Wrong pattern shipped against vehicle details you gave accurately, wrong finish, wrong set, missing hardware — a prepaid return label is sent and you pay nothing at all.',
+              'Wrong pattern shipped against vehicle details you gave accurately, wrong finish, wrong set, missing hardware: a prepaid return label is sent and you pay nothing at all.',
           },
           {
             term: 'Manufacturing defect',
@@ -151,7 +151,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'bullets',
         items: [
-          'A restocking deduction of up to 15% applies only where the wheels come back needing work to be saleable again — missing caps or hardware, damaged packaging that has to be replaced, or handling marks that need attention.',
+          'A restocking deduction of up to 15% applies only where the wheels come back needing work to be saleable again: missing caps or hardware, damaged packaging that has to be replaced, or handling marks that need attention.',
           'Any deduction is itemised in writing, with photos, before the refund is processed. You will never see a number appear on a refund without an explanation attached to it.',
           'If a set comes back in a condition that cannot be sold as new at all, it will be offered back to you at your cost rather than quietly scrapped.',
         ],
@@ -165,7 +165,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'callout',
         value:
-          'Photograph the pallet before the driver leaves and write the damage on the delivery receipt. That note is what makes a freight claim work — without it the carrier will usually refuse, and the claim becomes a fight nobody wins.',
+          'Photograph the pallet before the driver leaves and write the damage on the delivery receipt. That note is what makes a freight claim work. Without it the carrier will usually refuse, and the claim becomes a fight nobody wins.',
         tone: 'coral',
       },
       {
@@ -187,7 +187,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'If the wrong set arrives, or a wheel has a genuine manufacturing defect, it is put right in full — replacement or refund, your choice, with freight covered both ways.',
+          'If the wrong set arrives, or a wheel has a genuine manufacturing defect, it is put right in full: replacement or refund, your choice, with freight covered both ways.',
       },
       {
         kind: 'text',
@@ -219,14 +219,14 @@ const sections: readonly LegalSection[] = [
         kind: 'bullets',
         items: [
           'Refunds are issued within 3 business days of the returned set being inspected and accepted.',
-          'Money goes back to the original payment method used for the invoice. There is no store credit, and no alternative method is offered — sending a refund somewhere other than where the payment came from is how refund fraud works.',
-          'Once issued, the funds take a further 3–10 business days to appear depending on your bank or card issuer. That part is out of anyone’s hands here.',
+          'Money goes back to the original payment method used for the invoice. There is no store credit, and no alternative method is offered. Sending a refund somewhere other than where the payment came from is how refund fraud works.',
+          'Once issued, the funds take a further 3 to 10 business days to appear depending on your bank or card issuer. That part is out of anyone’s hands here.',
           'A written confirmation with the refunded amount and any itemised deduction is emailed the moment the refund is sent.',
         ],
       },
       {
         kind: 'text',
-        value: `Anything unclear about a refund goes to ${site.email} and is answered within ${site.responseWindow}. Independently run means there is no dispute department — the person who processed the refund is the person who replies.`,
+        value: `Anything unclear about a refund goes to ${site.email} and is answered within ${site.responseWindow}. Independently run means there is no dispute department. The person who processed the refund is the person who replies.`,
       },
     ],
   },
@@ -237,7 +237,7 @@ export default function ReturnsPolicyPage() {
     <LegalPage
       title={PAGE_TITLE}
       eyebrow="Changed your mind?"
-      intro={`Unmounted wheels, original boxes, ${site.returnsWindowDays} days. The one hard limit is tires — once they are mounted the wheels are used, and no wheel shop can take them back. Everything else is below.`}
+      intro={`Unmounted wheels, original boxes, ${site.returnsWindowDays} days. The one hard limit is tires: once they are mounted the wheels are used, and no wheel shop can take them back. Everything else is below.`}
       path="/returns-policy"
       description={PAGE_DESCRIPTION}
       updated={LEGAL_UPDATED}

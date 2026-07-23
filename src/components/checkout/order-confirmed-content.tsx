@@ -1,10 +1,17 @@
 'use client'
 
 import { motion, useReducedMotion } from 'motion/react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 import { Check, Copy, Mail, PartyPopper } from 'lucide-react'
 
+import {
+  getLastPaymentMethodServerSnapshot,
+  readLastPaymentMethod,
+  subscribeToLastPaymentMethod,
+} from '@/components/checkout/last-payment-method'
+import { PaymentMethodMarks } from '@/components/checkout/payment-method-marks'
 import { ButtonLink } from '@/components/ui/button'
+import { paymentMethodLabel } from '@/lib/payment-methods'
 import { site } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
@@ -54,16 +61,28 @@ const STEPS = [
   },
   {
     title: 'Invoice, then freight',
-    body: 'An invoice with a secure payment link arrives by email. Pay it whenever you are ready — the pallet books within 1–2 business days after that, free to the lower 48.',
+    body: 'An invoice with a secure payment link arrives by email. Pay it whenever you are ready. The pallet books within 1 to 2 business days after that, free to the lower 48.',
     tone: 'bg-coral-soft',
   },
 ] as const
+
+/** The step whose card names the payment method the customer picked. */
+const PAYMENT_STEP_INDEX = 2
 
 export function OrderConfirmedContent({
   orderNumber,
 }: OrderConfirmedContentProps) {
   const reduceMotion = useReducedMotion()
   const [copied, setCopied] = useState(false)
+
+  // sessionStorage does not exist on the server, so the method resolves on the
+  // client only. Someone who reopens this link in a fresh session gets null,
+  // and the card then says nothing about a method rather than guessing one.
+  const method = useSyncExternalStore(
+    subscribeToLastPaymentMethod,
+    readLastPaymentMethod,
+    getLastPaymentMethodServerSnapshot
+  )
 
   useEffect(() => {
     if (!copied) return
@@ -145,7 +164,7 @@ export function OrderConfirmedContent({
           {orderNumber ? (
             <>
               <p className="text-lg leading-relaxed text-slate">
-                Your order is with us. Nothing has been charged — the next thing
+                Your order is with us. Nothing has been charged. The next thing
                 you get is a fitment confirmation, and only then an invoice.
               </p>
 
@@ -186,8 +205,8 @@ export function OrderConfirmedContent({
               <p className="text-lg leading-relaxed text-slate">
                 There is no order number in this link, so there is nothing to show
                 here. If you just placed an order, the number is in the
-                confirmation you received on screen — and if you did not, nothing
-                has been charged either way.
+                confirmation you received on screen. If you did not, nothing has
+                been charged either way.
               </p>
               <p className="text-lg leading-relaxed text-slate">
                 Email {site.email} with your name and we will find it.
@@ -240,6 +259,18 @@ export function OrderConfirmedContent({
               <p className="text-[0.92rem] leading-relaxed text-graphite">
                 {step.body}
               </p>
+
+              {index === PAYMENT_STEP_INDEX && method ? (
+                <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-2 rounded-md border-2 border-ink bg-paper px-4 py-3">
+                  <span className="font-mono text-[0.6rem] font-bold tracking-[0.14em] text-slate uppercase">
+                    Paying by
+                  </span>
+                  <span className="text-[0.9rem] font-bold text-ink">
+                    {paymentMethodLabel(method)}
+                  </span>
+                  <PaymentMethodMarks id={method} markClassName="h-6 w-auto" />
+                </div>
+              ) : null}
             </motion.li>
           ))}
         </ol>
@@ -251,7 +282,7 @@ export function OrderConfirmedContent({
             Need to change something?
           </h2>
           <p className="max-w-2xl text-[0.95rem] leading-relaxed text-slate">
-            Address wrong, wrong finish, changed your mind entirely — reply any
+            Address wrong, wrong finish, changed your mind entirely: reply any
             time before you pay the invoice and it costs you nothing. Purasynth is
             independently run, so the reply comes from the person who packs the
             pallet.

@@ -75,7 +75,7 @@ function envChecks(): readonly EnvCheck[] {
 function logMissingConfiguration(): void {
   const missing = envChecks()
     .filter((check) => check.required && !check.satisfied)
-    .map((check) => `${check.name} — ${check.hint}`)
+    .map((check) => `${check.name}: ${check.hint}`)
 
   if (missing.length === 0) return
 
@@ -100,8 +100,7 @@ function SetupNotice() {
 
       <p className="mt-3 text-base leading-relaxed text-slate">
         This dashboard is not configured yet on this deployment. Nothing under{' '}
-        <code>/admin</code> will render — including the sign-in form — until it
-        is.
+        <code>/admin</code> will render, not even the sign-in form, until it is.
       </p>
 
       <p className="mt-6 flex items-start gap-2 text-sm leading-relaxed text-slate">

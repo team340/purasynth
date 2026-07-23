@@ -11,7 +11,7 @@ import { site } from '@/lib/site'
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${site.name} — Dually Wheel Sets`,
+    name: `${site.name} Dually Wheel Sets`,
     short_name: site.name,
     description: site.shortDescription,
     id: '/',

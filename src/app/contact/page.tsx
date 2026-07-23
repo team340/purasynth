@@ -10,8 +10,8 @@ import { Eyebrow } from '@/components/ui/eyebrow'
 import { breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/seo'
 import { site } from '@/lib/site'
 
-const PAGE_TITLE = 'Contact — Email the Owner Direct'
-const PAGE_DESCRIPTION = `Questions about dually wheel fitment, freight or an existing order go straight to the owner at ${site.email}. Written replies within ${site.responseWindow}. Email only — there is no phone line and no contact form.`
+const PAGE_TITLE = 'Contact: Email the Owner Direct'
+const PAGE_DESCRIPTION = `Questions about dually wheel fitment, freight or an existing order go straight to the owner at ${site.email}. Written replies within ${site.responseWindow}. Email only. There is no phone line and no contact form.`
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -85,7 +85,7 @@ export default function ContactPage() {
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate sm:text-xl">
               Every message lands in one inbox and is answered by the person who
               runs the shop. Bolt patterns, freight to an awkward address, a
-              question about an order already placed — all of it goes to the
+              question about an order already placed: all of it goes to the
               same address.
             </p>
           </Reveal>

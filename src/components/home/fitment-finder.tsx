@@ -24,6 +24,20 @@ interface FitmentOption {
 }
 
 /**
+ * A fitment label reads "<make><separator><bolt pattern>". Which separator the
+ * catalogue uses is a copy decision that can change, so cut on any of them and
+ * then drop the pattern itself plus whatever punctuation it left behind.
+ */
+function makeFromLabel(label: string): string {
+  const [head = label] = label.split(/\s*[—–:|]\s*/)
+
+  return head
+    .replace(/\d.*$/, '')
+    .replace(/[^A-Za-z]+$/, '')
+    .trim()
+}
+
+/**
  * The pickers are derived from `allFitments` at module scope, so products.ts
  * stays the single source of truth and the finder never calls a server.
  *
@@ -37,7 +51,7 @@ function toOption(fitment: Fitment): FitmentOption {
 
   return {
     id: fitment.id,
-    make: fitment.label.split('—')[0].trim(),
+    make: makeFromLabel(fitment.label),
     models: models.replace(/\s+dually$/i, ''),
     years: firstYear
       ? [`${firstYear} and newer`, `Before ${firstYear}`]
@@ -178,7 +192,7 @@ export function FitmentFinder() {
                 aria-hidden="true"
               />
               <p className="font-mono text-[0.7rem] leading-relaxed tracking-[0.12em] text-slate uppercase">
-                Runs entirely in your browser — nothing is sent anywhere
+                Runs entirely in your browser. Nothing is sent anywhere
               </p>
             </div>
           </Reveal>

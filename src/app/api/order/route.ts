@@ -292,7 +292,7 @@ export async function POST(request: NextRequest): Promise<Response> {
     return json(
       {
         success: false,
-        error: `We could not save your order just now. Please try again in a moment — nothing has been charged and each attempt gets a new order number — or email ${site.email} and it will be taken directly.`,
+        error: `We could not save your order just now. Nothing has been charged, and each attempt gets a new order number, so please try again in a moment. If it keeps failing, email ${site.email} and it will be taken directly.`,
       },
       502
     )

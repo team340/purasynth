@@ -265,7 +265,7 @@ export function CartDrawer() {
                       <dt className="text-slate">Freight</dt>
                       <dd className="font-semibold text-volt-deep">
                         {totals.shipping === 0
-                          ? 'Free — lower 48'
+                          ? 'Free to the lower 48'
                           : formatPrice(totals.shipping)}
                       </dd>
                     </div>

@@ -12,12 +12,16 @@ import { site } from '@/lib/site'
 export const metadata: Metadata = buildMetadata({
   title: 'Place Your Order',
   description:
-    'Give us your shipping details and fitment. No card details are collected — Purasynth confirms your bolt pattern, then emails an invoice with a secure payment link.',
+    'Give us your shipping details and fitment. No card details are collected. Purasynth confirms your bolt pattern, then emails an invoice with a secure payment link.',
   path: '/checkout',
   noIndex: true,
 })
 
-const STEPS = [
+/**
+ * What happens once the form is sent. Deliberately labelled as such, so it is
+ * not mistaken for the three-step progress indicator inside the form itself.
+ */
+const AFTER_ORDER = [
   { number: '01', label: 'You place the order', detail: 'No charge, no card fields.' },
   { number: '02', label: 'Fitment confirmed', detail: 'Checked against your truck.' },
   { number: '03', label: 'Invoice emailed', detail: 'Secure payment link, your call.' },
@@ -46,42 +50,50 @@ export default function CheckoutPage() {
         />
 
         <Reveal>
-          <Eyebrow tone="coral">Step 2 of 2</Eyebrow>
+          <Eyebrow tone="coral">Checkout</Eyebrow>
         </Reveal>
 
         <Reveal delay={0.08}>
           <h1 className="mt-5 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
-            Tell us where it goes.
+            Three short steps, no card fields.
           </h1>
         </Reveal>
 
         <Reveal delay={0.14}>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">
-            This form places an order, not a payment. Fill it in, and the owner
-            confirms your bolt pattern before an invoice goes anywhere near your
-            inbox — normally inside {site.responseWindow}.
+            This form places an order, not a payment. Work through the three
+            steps, and the owner confirms your bolt pattern before an invoice
+            goes anywhere near your inbox, normally inside {site.responseWindow}.
           </p>
         </Reveal>
 
         <Reveal delay={0.2}>
-          <ol className="mt-10 grid gap-3 sm:grid-cols-3">
-            {STEPS.map((step) => (
-              <li
-                key={step.number}
-                className="flex items-start gap-3 rounded-lg border-2 border-ink bg-paper px-5 py-4"
-              >
-                <span className="font-display text-2xl font-extrabold text-volt">
-                  {step.number}
-                </span>
-                <span className="flex flex-col">
-                  <span className="text-[0.92rem] font-bold text-ink">
-                    {step.label}
+          <div className="mt-10">
+            <p className="font-mono text-[0.66rem] font-bold tracking-[0.18em] text-slate uppercase">
+              After you send it
+            </p>
+
+            <ol className="mt-4 grid gap-3 sm:grid-cols-3">
+              {AFTER_ORDER.map((stage) => (
+                <li
+                  key={stage.number}
+                  className="flex items-start gap-3 rounded-lg border-2 border-ink bg-paper px-5 py-4"
+                >
+                  <span className="font-display text-2xl font-extrabold text-volt">
+                    {stage.number}
                   </span>
-                  <span className="text-[0.8rem] text-slate">{step.detail}</span>
-                </span>
-              </li>
-            ))}
-          </ol>
+                  <span className="flex flex-col">
+                    <span className="text-[0.92rem] font-bold text-ink">
+                      {stage.label}
+                    </span>
+                    <span className="text-[0.8rem] text-slate">
+                      {stage.detail}
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
         </Reveal>
 
         {/* DOM order matches visual order at every breakpoint — the summary

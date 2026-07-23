@@ -34,7 +34,7 @@ export const orderLineSchema = z.object({
     .number({ error: 'Please choose a quantity.' })
     .int('Please choose a whole number of sets.')
     .min(1, 'Please choose at least one set.')
-    .max(10, 'Ten sets per item is the maximum online — email us for more.'),
+    .max(10, 'Ten sets per item is the maximum online. Email us for more.'),
   fitment: z
     .string({ error: 'Please choose your truck.' })
     .min(1, 'Please choose your truck so we ship the right bolt pattern.')
@@ -58,7 +58,7 @@ export const orderSchema = z.object({
   phone: z
     .string({ error: 'Please enter a contact number.' })
     .trim()
-    .min(7, 'Please enter a number we can reach you on about freight.')
+    .min(7, 'Please enter a phone number the freight carrier can use.')
     .max(24, 'Please enter a shorter phone number.')
     .regex(PHONE_CHARS, 'Please enter a valid phone number.'),
   addressLine1: z
@@ -102,9 +102,10 @@ export const orderSchema = z.object({
    * charge — no card details are collected anywhere on this site. An invoice
    * with a secure payment link is emailed once fitment is confirmed.
    */
-  paymentPreference: z.enum(['card-link', 'bank-transfer', 'financing'], {
-    error: 'Please choose how you would like to pay.',
-  }),
+  paymentPreference: z.enum(
+    ['card', 'apple-pay', 'google-pay', 'bank-transfer'],
+    { error: 'Please choose how you would like to pay.' }
+  ),
   /** Explicit consent that this places an order, not a charge. */
   agreeToTerms: z.literal(true, {
     error: 'Please confirm you have read the terms before placing the order.',
@@ -133,31 +134,3 @@ export interface OrderApiResponse {
   readonly error?: string
   readonly fieldErrors?: OrderFieldErrors
 }
-
-export interface PaymentPreferenceOption {
-  readonly id: OrderInput['paymentPreference']
-  readonly label: string
-  readonly hint: string
-}
-
-export const PAYMENT_PREFERENCES: readonly PaymentPreferenceOption[] = [
-  {
-    id: 'card-link',
-    label: 'Secure card link by email',
-    hint: 'We email an invoice with a card link once fitment is confirmed.',
-  },
-  {
-    id: 'bank-transfer',
-    label: 'Bank transfer / ACH',
-    hint: 'Account details arrive with your invoice.',
-  },
-  {
-    /**
-     * A question, not a product. No financing facility is offered here, so the
-     * wording has to read as raising the subject rather than promising terms.
-     */
-    id: 'financing',
-    label: 'Ask about payment terms',
-    hint: 'Flags the question on your order. Whatever can be arranged comes back with the invoice — nothing is promised up front.',
-  },
-]

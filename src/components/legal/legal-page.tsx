@@ -161,7 +161,7 @@ export function LegalPage({
   sections,
   tone = 'volt',
 }: LegalPageProps) {
-  const mailto = `mailto:${site.email}?subject=${encodeURIComponent(`${title} — question`)}`
+  const mailto = `mailto:${site.email}?subject=${encodeURIComponent(`${title} question`)}`
 
   return (
     <>

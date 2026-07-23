@@ -18,7 +18,7 @@ import {
   webPageSchema,
 } from '@/lib/seo'
 
-const PAGE_TITLE = 'Shop Dually Wheels — Gloss Black & Mirror Polished Sets'
+const PAGE_TITLE = 'Shop Dually Wheels: Gloss Black & Mirror Polished Sets'
 const PAGE_DESCRIPTION =
   'Two 22x8.25 dually wheel sets for Ford, RAM and GM one-ton trucks. Six wheels per set, 4,500 lb load rating per wheel, caps and lug hardware included, free freight to the lower 48.'
 
@@ -40,7 +40,7 @@ const SET_CONTENTS = [
   {
     icon: Boxes,
     label: 'Six wheels',
-    detail: 'Two front, four rear — a complete axle set, never a partial.',
+    detail: 'Two front, four rear. A complete axle set, never a partial.',
   },
   {
     icon: Ruler,
@@ -125,7 +125,7 @@ export default function ShopPage() {
           <Reveal delay={0.16}>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate sm:text-xl">
               The whole catalogue, on one screen. Two finishes of the same
-              heavy-duty 22x8.25 dually set — pick the look, tell us the truck,
+              heavy-duty 22x8.25 dually set. Pick the look, tell us the truck,
               and the bolt pattern gets confirmed before a pallet is booked.
             </p>
           </Reveal>
@@ -182,7 +182,7 @@ export default function ShopPage() {
           <SectionHeading
             eyebrow="What's in a set"
             title="Six wheels and everything that bolts them on"
-            description="A set is a complete axle set. Nothing here is an upsell at the invoice stage — the price on the card is the price of the whole pallet."
+            description="A set is a complete axle set. Nothing here is an upsell at the invoice stage. The price on the card is the price of the whole pallet."
             tone="coral"
           />
 

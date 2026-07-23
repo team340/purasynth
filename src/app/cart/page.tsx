@@ -10,7 +10,7 @@ import { breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/seo'
 
 const PAGE_TITLE = 'Your Cart'
 const PAGE_DESCRIPTION =
-  'Review your Purasynth dually wheel sets before placing an order. No card details are collected — we confirm fitment, then email an invoice with a secure payment link.'
+  'Review your Purasynth dually wheel sets before placing an order. No card details are collected. We confirm fitment, then email an invoice with a secure payment link.'
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -61,7 +61,7 @@ export default function CartPage() {
           <Reveal delay={0.14}>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">
               Check the finish, the fitment and the count. Nothing is charged
-              here — the next step collects shipping details so the bolt pattern
+              here. The next step collects shipping details so the bolt pattern
               can be confirmed before a pallet is booked.
             </p>
           </Reveal>

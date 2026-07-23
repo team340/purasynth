@@ -3,8 +3,9 @@ import { Mail, MapPin, Truck } from 'lucide-react'
 
 import { Logo } from '@/components/layout/logo'
 import { Marquee } from '@/components/motion/marquee'
+import { PaymentStrip } from '@/components/payment/payment-marks'
 import { Container } from '@/components/ui/container'
-import { addressLines, helpNav, legalNav, site, socialLinks } from '@/lib/site'
+import { addressLines, helpNav, legalNav, site } from '@/lib/site'
 
 export function SiteFooter() {
   const year = new Date().getFullYear()
@@ -35,22 +36,9 @@ export function SiteFooter() {
             <Logo />
             <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-slate">
               {site.tagline} Heavy-duty six-piece dually wheel sets for Ford, RAM
-              and GM one-ton trucks — {site.ownerRole} from Tomball, Texas.
+              and GM one-ton trucks. {site.name} is {site.ownerRole} from
+              Tomball, Texas.
             </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border-2 border-ink px-4 py-2 font-mono text-[0.7rem] font-bold tracking-[0.12em] uppercase transition-transform duration-200 hover:-translate-y-0.5 hover:bg-lime"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
           </div>
 
           <nav aria-label="Shop">
@@ -129,21 +117,35 @@ export function SiteFooter() {
                 Free freight across the lower 48
               </span>
             </address>
-
-            <p className="mt-5 rounded-2xl bg-volt-soft px-4 py-3 text-[0.8rem] leading-relaxed text-volt-deep">
-              No card details are ever collected on this site. You place the
-              order, we confirm fitment, then send an invoice with a secure
-              payment link.
-            </p>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-ink/10 pt-7 text-[0.8rem] text-slate sm:flex-row sm:items-center sm:justify-between">
+        {/*
+          The marks are how the emailed invoice can be settled, not a checkout.
+          The caption has to carry that, so nobody reads the row as a promise
+          that a card can be entered here.
+        */}
+        <div className="mt-12 flex flex-col gap-5 border-t border-ink/10 pt-9 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div className="max-w-xl">
+            <h2 className="font-mono text-[0.7rem] font-bold tracking-[0.2em] text-slate uppercase">
+              Ways to pay your invoice
+            </h2>
+            <p className="mt-2.5 text-[0.85rem] leading-relaxed text-graphite">
+              No card details are taken on this site. You place the order, we
+              confirm fitment, then email an invoice you can settle by card,
+              Apple Pay, Google Pay or bank transfer.
+            </p>
+          </div>
+
+          <PaymentStrip className="lg:shrink-0 lg:justify-end" />
+        </div>
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-ink/10 pt-7 text-[0.8rem] text-slate sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.name}. Independently owned and operated.
           </p>
           <p>
-            {site.name} is a {site.businessType} — not an incorporated business.
+            {site.name} is a {site.businessType}, not an incorporated business.
             Vehicle and wheel brand names are used for fitment reference only.
           </p>
         </div>

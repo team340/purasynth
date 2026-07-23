@@ -54,7 +54,7 @@ export function ClosingCta() {
               <p className="max-w-2xl text-lg leading-relaxed text-slate">
                 Pick a finish, place the order, and get a straight answer on
                 fitment before a single dollar moves. No card fields, no call
-                centre — an invoice with a payment link, once you are happy.
+                centre. Just an invoice with a payment link, once you are happy.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -85,7 +85,7 @@ export function ClosingCta() {
               {/* Framed as the origin of the freight, not somewhere to turn
                   up. The contact page handles the by-appointment detail. */}
               <p className="max-w-md font-mono text-[0.7rem] leading-relaxed tracking-[0.14em] text-slate uppercase">
-                Pallets ship from {addressLines.join(' · ')} — no showroom, no
+                Pallets ship from {addressLines.join(' · ')}. No showroom, no
                 counter, nothing on display
               </p>
             </div>

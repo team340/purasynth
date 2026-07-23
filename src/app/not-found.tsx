@@ -76,7 +76,7 @@ export default function NotFound() {
 
             <p className="max-w-xl text-lg leading-relaxed text-slate">
               The page you were after has moved or never existed. Nothing is
-              wrong with your cart — head back to the wheels and pick up where
+              wrong with your cart. Head back to the wheels and pick up where
               you left off.
             </p>
 

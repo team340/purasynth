@@ -55,7 +55,9 @@ const stickers: readonly Sticker[] = [
   },
   {
     text: '6-piece set',
-    className: 'top-1/3 right-0 rotate-[8deg] bg-coral text-paper',
+    // coral-deep, not coral: this badge carries readable text and plain coral
+    // is only a 3.1:1 fill colour.
+    className: 'top-1/3 right-0 rotate-[8deg] bg-coral-deep text-paper',
   },
   {
     text: 'Free freight',
@@ -105,9 +107,9 @@ export function Hero() {
               Two finishes, one spec sheet. Deep{' '}
               <strong className="font-semibold text-ink">gloss black</strong> or
               hand{' '}
-              <strong className="font-semibold text-ink">mirror polish</strong>{' '}
-              — both 22x8.25, both flow-formed A356-T6, both rated to 4,500 lb a
-              corner. Six wheels, caps and hardware in every box.
+              <strong className="font-semibold text-ink">mirror polish</strong>.
+              Both are 22x8.25, both flow-formed A356-T6, both rated to 4,500 lb
+              a corner. Six wheels, caps and hardware in every box.
             </motion.p>
 
             <motion.div

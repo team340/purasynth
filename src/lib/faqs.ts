@@ -16,7 +16,7 @@ export const orderingFaqs: readonly FaqEntry[] = [
   {
     question: 'How does checkout work if there is no payment gateway?',
     answer:
-      'You place the order on the site with your shipping details and fitment — no card details are collected anywhere. The order lands with us straight away, we confirm the bolt pattern against your year, make and model, then email an invoice with a secure payment link. Nothing is charged until you choose to pay that invoice.',
+      'You place the order on the site with your shipping details and fitment. No card details are collected anywhere. The order lands with us straight away, we confirm the bolt pattern against your year, make and model, then email an invoice with a secure payment link. Nothing is charged until you choose to pay that invoice.',
   },
   {
     question: 'When will I hear back after placing an order?',
@@ -25,12 +25,12 @@ export const orderingFaqs: readonly FaqEntry[] = [
   {
     question: 'Can I cancel after placing an order?',
     answer:
-      'Yes. Because no payment is taken at checkout, cancelling before you pay the invoice costs you nothing — reply to the confirmation email and it is done. After payment, the standard returns policy applies.',
+      'Yes. Because no payment is taken at checkout, cancelling before you pay the invoice costs you nothing. Reply to the confirmation email and it is done. After payment, the standard returns policy applies.',
   },
   {
     question: 'Do you take financing or bank transfer?',
     answer:
-      'Bank transfer, yes — account details arrive with your invoice. Financing is not something offered here as a product, but choosing "Ask about payment terms" at checkout puts the question on your order and the answer comes back with the invoice. Nothing is committed at that point either way — you are still free to walk away.',
+      'Bank transfer, yes. Choose "Bank transfer or ACH" at checkout and the account details arrive with your invoice. Financing is not something offered here as a product, but asking about payment terms in the notes box puts the question on your order and the answer comes back with the invoice. Nothing is committed at that point either way, so you are still free to walk away.',
   },
 ]
 
@@ -43,7 +43,7 @@ export const fitmentFaqs: readonly FaqEntry[] = [
   {
     question: 'What if I do not know my bolt pattern?',
     answer:
-      'Pick "Not sure — check my fitment" at checkout and add your year, make, model and trim in the vehicle box. We work it out and confirm in writing before anything ships. It is the same answer either way, we just do the looking up.',
+      'Pick "Not sure, check my fitment" at checkout and add your year, make, model and trim in the vehicle box. We work it out and confirm in writing before anything ships. It is the same answer either way, and we just do the looking up.',
   },
   {
     question: 'Are the wheels hub-centric?',
@@ -53,7 +53,7 @@ export const fitmentFaqs: readonly FaqEntry[] = [
   {
     question: 'Do I need new tires or TPMS sensors?',
     answer:
-      'You will need tires mounted to the new wheels — we ship wheels only. Existing TPMS sensors usually transfer, but a shop should check the sensor style before the swap. We can talk through what your truck needs before you order.',
+      'You will need tires mounted to the new wheels, because we ship wheels only. Existing TPMS sensors usually transfer, but a shop should check the sensor style before the swap. We can talk through what your truck needs before you order.',
   },
   {
     question: 'Is a 22x8.25 wheel legal and safe on a one-ton dually?',
@@ -66,7 +66,7 @@ export const productFaqs: readonly FaqEntry[] = [
   {
     question: 'What is in a set?',
     answer:
-      'Six wheels — two front, four rear — plus front and rear center caps and the lug hardware for your bolt pattern. Tires are not included.',
+      'Six wheels, two front and four rear, plus front and rear center caps and the lug hardware for your bolt pattern. Tires are not included.',
   },
   {
     question: 'Flow-formed or fully forged?',
@@ -89,12 +89,12 @@ export const shippingFaqs: readonly FaqEntry[] = [
   {
     question: 'How much is shipping?',
     answer:
-      'Free freight to any address in the lower 48. Alaska, Hawaii and outside the US are quoted individually — email us before ordering and we come back with a real number.',
+      'Free freight to any address in the lower 48. Alaska, Hawaii and outside the US are quoted individually. Email us before ordering and we come back with a real number.',
   },
   {
     question: 'How long does delivery take?',
     answer:
-      'Wheels leave within 1–2 business days of a paid invoice, and freight typically takes 3–7 business days on top. A tracking number comes by email as soon as the pallet is booked.',
+      'Wheels leave within 1 to 2 business days of a paid invoice, and freight typically takes 3 to 7 business days on top. A tracking number comes by email as soon as the pallet is booked.',
   },
   {
     question: 'What if a wheel arrives damaged?',
@@ -103,7 +103,7 @@ export const shippingFaqs: readonly FaqEntry[] = [
   },
   {
     question: 'Can I return a set?',
-    answer: `Unmounted wheels in original packaging can be returned within ${site.returnsWindowDays} days. Once tires are mounted the wheels count as used and cannot be returned, which is standard across the wheel trade — check fitment before mounting.`,
+    answer: `Unmounted wheels in original packaging can be returned within ${site.returnsWindowDays} days. Once tires are mounted the wheels count as used and cannot be returned, which is standard across the wheel trade. Check fitment before mounting.`,
   },
 ]
 

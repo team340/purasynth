@@ -9,7 +9,7 @@ import { buildMetadata } from '@/lib/seo'
 import { site } from '@/lib/site'
 
 const PAGE_TITLE = 'Warranty'
-const PAGE_DESCRIPTION = `Purasynth dually wheels carry a ${site.warrantyYears}-year structural and finish warranty to the original purchaser. What is covered, what is not — curb damage, acid wheel cleaners, improper torque, off-road and commercial abuse — and how to claim by email with photos.`
+const PAGE_DESCRIPTION = `Purasynth dually wheels carry a ${site.warrantyYears}-year structural and finish warranty to the original purchaser. What is covered, what is not (curb damage, acid wheel cleaners, improper torque, off-road and commercial abuse), and how to claim by email with photos.`
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -35,12 +35,12 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'This is a defect warranty. It covers wheels that were made wrong. It does not cover wheels that were damaged, neglected, modified or asked to do a job they were never rated for — and the sections below say exactly which is which, so nobody has to guess when something goes wrong.',
+          'This is a defect warranty. It covers wheels that were made wrong. It does not cover wheels that were damaged, neglected, modified or asked to do a job they were never rated for. The sections below say exactly which is which, so nobody has to guess when something goes wrong.',
       },
       {
         kind: 'callout',
         value:
-          'Keep your order number and the invoice email. Proof of purchase is what starts a claim, and an order number is enough — no registration card, no online form, no warranty account to create.',
+          'Keep your order number and the invoice email. Proof of purchase is what starts a claim, and an order number is enough. There is no registration card, no online form and no warranty account to create.',
         tone: 'volt',
       },
     ],
@@ -116,7 +116,7 @@ const sections: readonly LegalSection[] = [
           {
             term: 'Improper torque',
             detail:
-              'Over-torque, under-torque, impact-gun-only fitting, wrong-seat lug nuts, and a missed re-torque at 50–100 miles. These cause cracked hub faces, elongated bolt holes and vibration, and all of them are installation faults.',
+              'Over-torque, under-torque, impact-gun-only fitting, wrong-seat lug nuts, and a missed re-torque at 50 to 100 miles. These cause cracked hub faces, elongated bolt holes and vibration, and all of them are installation faults.',
           },
           {
             term: 'Off-road and commercial abuse',
@@ -148,7 +148,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Transit damage is not a warranty matter either — it is handled as a freight claim, same day, under the returns policy. That route is faster and it is fully covered when the damage was noted on the delivery paperwork.',
+          'Transit damage is not a warranty matter either. It is handled as a freight claim, same day, under the returns policy. That route is faster and it is fully covered when the damage was noted on the delivery paperwork.',
       },
     ],
   },
@@ -161,10 +161,10 @@ const sections: readonly LegalSection[] = [
         items: [
           'The warranty runs to the original purchaser only, on the original order, and is not transferable if the wheels or the truck are sold.',
           'Wheels must have been fitted by a qualified professional workshop with dually-capable equipment.',
-          'Lug nuts must have been torqued to the vehicle manufacturer’s specification with a calibrated torque wrench, in a star pattern, and re-torqued at 50–100 miles.',
+          'Lug nuts must have been torqued to the vehicle manufacturer’s specification with a calibrated torque wrench, in a star pattern, and re-torqued at 50 to 100 miles.',
           'Tires fitted must meet or exceed the load rating required for the axle.',
           'The wheels must have been used on the vehicle whose fitment was confirmed before shipping.',
-          'Reasonable maintenance — regular washing with a pH-neutral car shampoo, and no acid wheel cleaner ever.',
+          'Reasonable maintenance: regular washing with a pH-neutral car shampoo, and no acid wheel cleaner ever.',
         ],
       },
       {
@@ -181,7 +181,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Claims are made by email. There is no form, no portal and no ticket number — just send the following and it gets looked at properly.',
+          'Claims are made by email. There is no form, no portal and no ticket number. Just send the following and it gets looked at properly.',
       },
       {
         kind: 'steps',
@@ -194,7 +194,7 @@ const sections: readonly LegalSection[] = [
           </>,
           'Describe what happened and when you first noticed it, including roughly how many miles the wheels have covered.',
           'Attach photos: one wide shot of the whole wheel on the vehicle, one of the wheel off the vehicle if it has been removed, and close-ups of the affected area with something for scale.',
-          'Include a photo of the whole set if the issue appears on more than one wheel — a pattern across several wheels tells a different story from a single one.',
+          'Include a photo of the whole set if the issue appears on more than one wheel. A pattern across several wheels tells a different story from a single one.',
           'Confirm who fitted the wheels and that they were torqued and re-torqued to specification. An installer’s invoice helps and is not essential.',
         ],
       },
@@ -212,7 +212,7 @@ const sections: readonly LegalSection[] = [
         kind: 'bullets',
         items: [
           'A defective wheel is replaced with the same wheel in the same finish, at no cost, including freight both ways.',
-          'If that exact wheel is no longer available, the closest equivalent is offered, or a refund of the price paid for the affected wheels — your choice.',
+          'If that exact wheel is no longer available, the closest equivalent is offered, or a refund of the price paid for the affected wheels, whichever you prefer.',
           'Where a defect affects the look of a matched set and a single replacement would be visibly different, the set is replaced rather than one wheel.',
           'A replacement wheel carries the remainder of the original warranty period, not a fresh one.',
         ],
@@ -220,7 +220,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Cover is limited to the wheels themselves. Tire mounting and balancing, labour, alignment, towing, vehicle rental, lost income and any other consequential cost are not covered — see the limitation of liability section of the terms of service.',
+          'Cover is limited to the wheels themselves. Tire mounting and balancing, labour, alignment, towing, vehicle rental, lost income and any other consequential cost are not covered. See the limitation of liability section of the terms of service.',
       },
     ],
   },

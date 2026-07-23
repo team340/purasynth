@@ -159,8 +159,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <p className="rounded-lg bg-lime-soft px-5 py-4 text-[0.9rem] leading-relaxed font-medium text-graphite">
                   <span className="font-bold">No payment is taken now.</span>{' '}
                   Placing this order reserves the set. We confirm your bolt
-                  pattern, then email an invoice with a secure payment link —
-                  there are no card fields anywhere on this site.
+                  pattern, then email an invoice with a secure payment link.
+                  There are no card fields anywhere on this site.
                 </p>
 
                 <ul className="flex flex-col gap-2.5 py-1">

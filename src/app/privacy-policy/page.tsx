@@ -25,7 +25,7 @@ const sections: readonly LegalSection[] = [
     blocks: [
       {
         kind: 'text',
-        value: `Purasynth is a ${site.businessType} — one individual, ${site.ownerRole}, selling dually wheel sets online from ${site.address.locality}, ${site.address.region}. There is no team with access to your details and no third-party call centre handling your messages. The owner reads every order and every email.`,
+        value: `Purasynth is a ${site.businessType}, ${site.ownerRole} by one individual, selling dually wheel sets online from ${site.address.locality}, ${site.address.region}. There is no team with access to your details and no third-party call centre handling your messages. The owner reads every order and every email.`,
       },
       {
         kind: 'text',
@@ -59,7 +59,7 @@ const sections: readonly LegalSection[] = [
           {
             term: 'Phone number',
             detail:
-              'Passed to the freight carrier. Curbside freight is scheduled by phone — a delivery without a contact number gets stuck at the terminal.',
+              'Passed to the freight carrier. Curbside freight is scheduled by phone, so a delivery without a contact number gets stuck at the terminal.',
           },
           {
             term: 'Shipping address',
@@ -74,7 +74,7 @@ const sections: readonly LegalSection[] = [
           {
             term: 'Order notes',
             detail:
-              'Anything you type into the notes box — access instructions, delivery constraints, questions.',
+              'Anything you type into the notes box: access instructions, delivery constraints, questions.',
           },
           {
             term: 'What you ordered',
@@ -104,7 +104,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'The hosting platform keeps standard server logs — IP address, timestamp, requested URL, user agent — for delivery and abuse prevention. They are not linked to an order record and are not used to profile visitors.',
+          'The hosting platform keeps standard server logs (IP address, timestamp, requested URL, user agent) for delivery and abuse prevention. They are not linked to an order record and are not used to profile visitors.',
       },
     ],
   },
@@ -137,17 +137,17 @@ const sections: readonly LegalSection[] = [
         kind: 'terms',
         items: [
           {
-            term: 'Order records — Supabase',
+            term: 'Order records: Supabase',
             detail:
               'Orders are written to a Supabase Postgres database hosted in a United States region. Access is restricted to the owner through a service-role key held as a server environment variable and never exposed to the browser.',
           },
           {
-            term: 'The site itself — Netlify',
+            term: 'The site itself: Netlify',
             detail:
               'Pages and the order route run on Netlify, which keeps standard access logs on its own infrastructure.',
           },
           {
-            term: 'Email threads — the owner mailbox',
+            term: 'Email threads: the owner mailbox',
             detail:
               'Correspondence lives in a normal email mailbox, protected by a strong password and two-factor authentication.',
           },
@@ -209,7 +209,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'bullets',
         items: [
-          'Your cart is held in your own browser under the localStorage key purasynth.cart.v1. It stores product slugs, chosen fitments and quantities — no personal details — and never leaves your device until you submit an order.',
+          'Your cart is held in your own browser under the localStorage key purasynth.cart.v1. It stores product slugs, chosen fitments and quantities (no personal details) and never leaves your device until you submit an order.',
           'A single cookie exists for the owner’s order dashboard. It is set only after the owner signs in, holds nothing but a signed expiry timestamp, and is never set on a customer visit.',
         ],
       },
@@ -260,7 +260,7 @@ const sections: readonly LegalSection[] = [
         value:
           'Purasynth applies the rights below to every US customer, regardless of which state you order from. It is simpler than checking a residency map, and you should not need to live in the right place to control your own details.',
       },
-      { kind: 'subheading', value: 'California — CCPA and CPRA' },
+      { kind: 'subheading', value: 'California: CCPA and CPRA' },
       {
         kind: 'text',
         value:
@@ -269,13 +269,13 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'bullets',
         items: [
-          'Right to know — what categories of personal information have been collected about you, the sources, the purpose, and the categories of third parties it was disclosed to.',
-          'Right to access — a copy of the specific pieces of personal information held about you.',
-          'Right to delete — deletion of personal information held about you, subject to the record-keeping exceptions in the retention section above.',
-          'Right to correct — correction of anything inaccurate, such as a misspelled name or an outdated shipping address.',
-          'Right to opt out of sale or sharing — nothing is sold or shared for advertising, so there is nothing to opt out of, but the request will always be honoured and confirmed in writing.',
-          'Right to limit use of sensitive personal information — no sensitive personal information as the CPRA defines it is collected here.',
-          'Right to non-discrimination — exercising any of these rights will never change your price, your freight cost or the service you receive.',
+          'Right to know: what categories of personal information have been collected about you, the sources, the purpose, and the categories of third parties it was disclosed to.',
+          'Right to access: a copy of the specific pieces of personal information held about you.',
+          'Right to delete: deletion of personal information held about you, subject to the record-keeping exceptions in the retention section above.',
+          'Right to correct: correction of anything inaccurate, such as a misspelled name or an outdated shipping address.',
+          'Right to opt out of sale or sharing: nothing is sold or shared for advertising, so there is nothing to opt out of, but the request will always be honoured and confirmed in writing.',
+          'Right to limit use of sensitive personal information: no sensitive personal information as the CPRA defines it is collected here.',
+          'Right to non-discrimination: exercising any of these rights will never change your price, your freight cost or the service you receive.',
         ],
       },
       { kind: 'subheading', value: 'No sale, no sharing' },
@@ -289,7 +289,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Residents of Virginia, Colorado, Connecticut, Utah, Texas and other states with comprehensive privacy laws have broadly equivalent rights of access, correction, deletion and portability. Use the same email address and the same process below — no state-specific form is needed.',
+          'Residents of Virginia, Colorado, Connecticut, Utah, Texas and other states with comprehensive privacy laws have broadly equivalent rights of access, correction, deletion and portability. Use the same email address and the same process below. No state-specific form is needed.',
       },
       { kind: 'subheading', value: 'Authorised agents' },
       {
@@ -310,7 +310,7 @@ const sections: readonly LegalSection[] = [
             Email <strong className="font-semibold text-ink">{site.email}</strong>{' '}
             with &ldquo;Privacy request&rdquo; in the subject line.
           </>,
-          'Say which right you are exercising — know, access, delete, correct or opt out — and include the email address you used to order, plus the order number if you have it.',
+          'Say which right you are exercising (know, access, delete, correct or opt out) and include the email address you used to order, plus the order number if you have it.',
           'Your identity is verified by matching those details against the order record. No extra document is asked for; if the details do not match, you will be told rather than left waiting.',
           'A response comes within 45 days, and usually far sooner. If more time is genuinely needed the extension will be explained in writing before the 45 days are up.',
           'Deletion is confirmed in writing once it is done, including anything that had to be retained and the legal reason it was retained.',
@@ -382,8 +382,8 @@ const sections: readonly LegalSection[] = [
             <strong className="font-semibold text-ink">{site.email}</strong>.
             Postal correspondence can be sent to {site.address.street},{' '}
             {site.address.locality}, {site.address.regionCode}{' '}
-            {site.address.postcode}, {site.address.country} — a business address,
-            not a walk-in store, so email will always be faster.
+            {site.address.postcode}, {site.address.country}. That is a business
+            address, not a walk-in store, so email will always be faster.
           </>
         ),
       },

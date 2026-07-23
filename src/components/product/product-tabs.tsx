@@ -181,7 +181,7 @@ export function ProductTabs({ product }: ProductTabsProps) {
                   ))}
                 </ul>
                 <p className="text-[0.9rem] text-slate">
-                  Tires are not included — we ship wheels only.
+                  Tires are not included. We ship wheels only.
                 </p>
               </div>
             ) : null}
@@ -211,7 +211,7 @@ export function ProductTabs({ product }: ProductTabsProps) {
                 </ul>
                 <p className="text-[0.9rem] text-slate">
                   Not sure which one you have? Pick &ldquo;Not sure&rdquo; and add
-                  your year, make and model at checkout — we confirm it in writing
+                  your year, make and model at checkout. We confirm it in writing
                   before anything ships.
                 </p>
               </div>

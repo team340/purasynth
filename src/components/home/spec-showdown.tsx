@@ -27,7 +27,9 @@ const GRID =
   'grid grid-cols-2 gap-x-4 sm:gap-x-6 lg:grid-cols-[minmax(0,0.62fr)_minmax(0,1fr)_minmax(0,1fr)]'
 
 function specValue(product: Product, label: string): string {
-  return product.specs.find((spec) => spec.label === label)?.value ?? '—'
+  return (
+    product.specs.find((spec) => spec.label === label)?.value ?? 'Not listed'
+  )
 }
 
 const columnTints: readonly string[] = ['bg-volt-soft/50', 'bg-lime-soft/60']

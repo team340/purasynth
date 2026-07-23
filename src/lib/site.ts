@@ -64,7 +64,7 @@ export const site: SiteConfig = {
    * supplies the wheels, it does not manufacture them.
    */
   description:
-    'Purasynth specs and ships heavy-duty dually wheel sets for Ford, RAM and GM one-ton trucks. Flow-formed aluminum, 4,500 lb load rating per wheel, gloss black and mirror-polished finishes, free freight across the lower 48 from Tomball, Texas. Independently run — you talk to the owner.',
+    'Purasynth specs and ships heavy-duty dually wheel sets for Ford, RAM and GM one-ton trucks. Flow-formed aluminum, 4,500 lb load rating per wheel, gloss black and mirror-polished finishes, free freight across the lower 48 from Tomball, Texas. Independently run, so you talk to the owner.',
   shortDescription:
     'Heavy-duty dually wheel sets for Ford, RAM and GM one-ton trucks. Free freight, lower 48.',
   url: SITE_URL,
@@ -134,10 +134,4 @@ export const helpNav: readonly NavLink[] = [
   { href: '/faq', label: 'Help center' },
   { href: '/contact', label: 'Talk to the owner' },
   { href: '/cart', label: 'Your cart' },
-]
-
-export const socialLinks: readonly NavLink[] = [
-  { href: 'https://www.instagram.com/', label: 'Instagram' },
-  { href: 'https://www.tiktok.com/', label: 'TikTok' },
-  { href: 'https://www.youtube.com/', label: 'YouTube' },
 ]

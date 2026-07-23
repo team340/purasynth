@@ -75,7 +75,7 @@ const sections: readonly LegalSection[] = [
   },
   {
     id: 'the-cart-key',
-    heading: 'Your cart — purasynth.cart.v1',
+    heading: 'Your cart: purasynth.cart.v1',
     blocks: [
       {
         kind: 'terms',
@@ -88,7 +88,7 @@ const sections: readonly LegalSection[] = [
           {
             term: 'What it holds',
             detail:
-              'A list of product slugs, the fitment you picked and quantities. Nothing else — no name, no email, no address, no price.',
+              'A list of product slugs, the fitment you picked and quantities. Nothing else: no name, no email, no address, no price.',
           },
           {
             term: 'Why it exists',
@@ -116,7 +116,7 @@ const sections: readonly LegalSection[] = [
   },
   {
     id: 'the-admin-cookie',
-    heading: 'The order dashboard — purasynth_admin',
+    heading: 'The order dashboard: purasynth_admin',
     blocks: [
       {
         kind: 'terms',
@@ -166,7 +166,7 @@ const sections: readonly LegalSection[] = [
           'No session recording or heatmaps. Nobody is watching a replay of your mouse.',
           'No social media pixels or share widgets that phone home.',
           'No cross-site identifiers, no fingerprinting, no data brokers, no audience lists.',
-          'No fonts, scripts or stylesheets loaded from a third-party CDN at page load — typefaces are bundled with the site at build time, so your browser does not call out to another domain to render a page.',
+          'No fonts, scripts or stylesheets loaded from a third-party CDN at page load. Typefaces are bundled with the site at build time, so your browser does not call out to another domain to render a page.',
         ],
       },
       {
@@ -183,7 +183,7 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'text',
         value:
-          'Consent banners exist because sites want to place non-essential cookies. Strictly necessary storage — the kind without which the thing you asked for cannot work — does not require consent, and there is nothing else here to consent to.',
+          'Consent banners exist because sites want to place non-essential cookies. Strictly necessary storage (the kind without which the thing you asked for cannot work) does not require consent, and there is nothing else here to consent to.',
       },
       {
         kind: 'text',
@@ -202,7 +202,7 @@ const sections: readonly LegalSection[] = [
           'Emptying your cart on the cart page clears the stored entry immediately.',
           'Clearing site data for this domain in your browser settings removes everything this site has stored, with no other effect.',
           'Browsing in a private or incognito window means the cart is discarded when you close it.',
-          'Blocking storage for this site entirely still lets you browse and read every page — the cart simply will not persist between page loads.',
+          'Blocking storage for this site entirely still lets you browse and read every page. The cart simply will not persist between page loads.',
         ],
       },
       {
@@ -212,7 +212,7 @@ const sections: readonly LegalSection[] = [
             Questions about anything on this page go to{' '}
             <strong className="font-semibold text-ink">{site.email}</strong>.
             If you find something on this site setting storage that is not
-            described here, that is worth telling the owner about — please do.
+            described here, that is worth telling the owner about. Please do.
           </>
         ),
       },

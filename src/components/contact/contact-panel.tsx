@@ -38,7 +38,7 @@ const TOPICS: readonly ContactTopic[] = [
   {
     id: 'fitment',
     label: 'Will these fit my truck?',
-    subject: 'Fitment check — year / make / model',
+    subject: 'Fitment check: year / make / model',
     body: [
       'Truck (year, make, model, trim):',
       'Dually or single rear wheel:',
@@ -50,7 +50,7 @@ const TOPICS: readonly ContactTopic[] = [
   {
     id: 'order',
     label: 'A question about my order',
-    subject: 'Order question — order number',
+    subject: 'Order question: order number',
     body: [
       'Order number:',
       'Name on the order:',
@@ -60,7 +60,7 @@ const TOPICS: readonly ContactTopic[] = [
   {
     id: 'freight',
     label: 'Freight, AK/HI or international',
-    subject: 'Freight quote — delivery address',
+    subject: 'Freight quote: delivery address',
     body: [
       'Delivery city, state and ZIP:',
       'Residential or commercial address:',
@@ -71,7 +71,7 @@ const TOPICS: readonly ContactTopic[] = [
   {
     id: 'warranty',
     label: 'Warranty or damage claim',
-    subject: 'Warranty claim — order number',
+    subject: 'Warranty claim: order number',
     body: [
       'Order number:',
       'Date the pallet arrived:',
@@ -86,7 +86,7 @@ const CHECKLIST = [
     icon: Ruler,
     title: 'Your truck, in full',
     detail:
-      'Year, make, model and trim — an F-350 Lariat and an F-450 cab and chassis do not share a bolt pattern.',
+      'Year, make, model and trim. An F-350 Lariat and an F-450 cab and chassis do not share a bolt pattern.',
   },
   {
     icon: ClipboardList,
@@ -104,7 +104,7 @@ const CHECKLIST = [
     icon: Clock,
     title: 'When you need it',
     detail:
-      'If there is a date you are working toward, say so — it changes what gets recommended.',
+      'If there is a date you are working toward, say so. It changes what gets recommended.',
   },
 ] as const
 
@@ -159,7 +159,7 @@ export function ContactPanel() {
                   <p className="mt-5 max-w-lg text-[1.02rem] leading-relaxed text-slate">
                     One person reads this inbox. Pick what your message is
                     about and the subject line and a short checklist get filled
-                    in for you — answer the lines you can and send it.
+                    in for you. Answer the lines you can and send it.
                   </p>
 
                   <fieldset className="mt-8">
@@ -278,7 +278,7 @@ export function ContactPanel() {
                     ))}
                   </address>
                   <p className="mt-5 rounded-md border-2 border-coral bg-coral-soft p-4 text-[0.88rem] leading-relaxed font-semibold text-ink">
-                    Business address — not a walk-in showroom. There is no
+                    Business address, not a walk-in showroom. There is no
                     counter, no display floor and no stock to browse. Visits are
                     by appointment only, arranged by email first.
                   </p>

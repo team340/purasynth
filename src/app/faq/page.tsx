@@ -18,7 +18,7 @@ import {
 } from '@/lib/seo'
 import { site } from '@/lib/site'
 
-const PAGE_TITLE = 'FAQ — Dually Wheel Fitment, Payment, Freight & Returns'
+const PAGE_TITLE = 'FAQ: Dually Wheel Fitment, Payment, Freight & Returns'
 const PAGE_DESCRIPTION =
   'Every question asked about Purasynth dually wheels: how checkout works without a payment gateway, which trucks the 8x200, 8x210 and 8x165.1 patterns fit, what is in a set, freight timings and the returns window.'
 
@@ -103,7 +103,7 @@ export default function FaqPage() {
 
           <Reveal delay={0.16}>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate sm:text-xl">
-              Fitment, payment, freight and returns — {allFaqs.length} answers
+              Fitment, payment, freight and returns: {allFaqs.length} answers
               written the way they would be said out loud. If yours is not here,
               it gets answered by email within {site.responseWindow}.
             </p>
@@ -198,7 +198,7 @@ export default function FaqPage() {
                   </h2>
                   <p className="mt-5 text-lg leading-relaxed text-slate">
                     Odd wheelbase, aftermarket hub, a trailer setup nobody
-                    writes guides about — send it over. A written answer beats a
+                    writes guides about. Send it over. A written answer beats a
                     guess, and it costs you nothing to ask before ordering.
                   </p>
                 </div>

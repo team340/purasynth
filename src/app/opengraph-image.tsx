@@ -11,7 +11,7 @@ import { site } from '@/lib/site'
  * has no dark theme and a card should look like the page it links to.
  */
 
-export const alt = `${site.name} — ${site.tagline}`
+export const alt = `${site.name}: ${site.tagline}`
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 

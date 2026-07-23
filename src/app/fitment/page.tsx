@@ -15,7 +15,7 @@ import { allFitments } from '@/lib/products'
 import { breadcrumbSchema, buildMetadata, webPageSchema } from '@/lib/seo'
 import { site } from '@/lib/site'
 
-const PAGE_TITLE = 'Dually Wheel Fitment Guide — Bolt Patterns, Hub Bore & Load Rating'
+const PAGE_TITLE = 'Dually Wheel Fitment Guide: Bolt Patterns, Hub Bore & Load Rating'
 const PAGE_DESCRIPTION =
   'How to work out dually wheel fitment: 8x200mm Ford, 8x210mm GM and 8x165.1mm RAM bolt patterns, hub-centric versus lug-centric mounting, load rating, offset, and exactly what to measure before ordering a 22x8.25 set.'
 
@@ -39,7 +39,7 @@ const FOUR_NUMBERS = [
   {
     icon: Target,
     title: 'Bolt pattern',
-    body: 'Eight studs, and the circle they sit on. Ford, GM and RAM all use eight, and all three circles are different — a wheel that is 10mm out will start on two studs and never seat.',
+    body: 'Eight studs, and the circle they sit on. Ford, GM and RAM all use eight, and all three circles are different. A wheel that is 10mm out will start on two studs and never seat.',
   },
   {
     icon: Ruler,
@@ -59,9 +59,9 @@ const FOUR_NUMBERS = [
 ] as const
 
 const MEASURE_STEPS = [
-  'Park on level ground, chock the front wheels, and work on one rear hub at a time. You are measuring the hub, not the wheel that is currently on it — an aftermarket wheel already on the truck may itself be wrong.',
+  'Park on level ground, chock the front wheels, and work on one rear hub at a time. You are measuring the hub, not the wheel that is currently on it. An aftermarket wheel already on the truck may itself be wrong.',
   'Count the studs. Every truck on this page is an eight-stud pattern. If you count six or ten, the sets sold here are not for that truck.',
-  'On an eight-lug hub, measure straight across the circle from the center of one stud to the center of the stud directly opposite it. That distance is the bolt circle diameter — 200mm, 210mm or 165.1mm on the trucks listed below.',
+  'On an eight-lug hub, measure straight across the circle from the center of one stud to the center of the stud directly opposite it. That distance is the bolt circle diameter: 200mm, 210mm or 165.1mm on the trucks listed below.',
   'Measure the raised metal ring on the hub face that the wheel slides over. That diameter is the center bore your wheels have to match.',
   'Photograph the door-jamb sticker. It carries the gross axle weight ratings, which is what the wheel load rating has to clear.',
 ] as const
@@ -85,7 +85,7 @@ const MISTAKES = [
   },
   {
     title: 'Skipping the re-torque',
-    body: 'Aluminum settles against the hub face over the first few heat cycles. Re-torque at 50–100 miles or the clamp load quietly drops.',
+    body: 'Aluminum settles against the hub face over the first few heat cycles. Re-torque at 50 to 100 miles or the clamp load quietly drops.',
   },
   {
     title: 'Assuming cab and chassis is the same truck',
@@ -242,7 +242,7 @@ export default function FitmentPage() {
                 <p>
                   Ford Super Duty duallys from 2005 onward run 8x200mm. GM 3500
                   duallys from 2011 onward run 8x210mm. RAM 3500 and up have run
-                  8x165.1mm — the same thing as 8x6.5&Prime; in imperial — since
+                  8x165.1mm (the same thing as 8x6.5&Prime; in imperial) since
                   1994. A 200mm wheel will start onto a 210mm hub on two or
                   three studs and feel like it is nearly right. It is not. Stop.
                 </p>
@@ -269,7 +269,7 @@ export default function FitmentPage() {
                   wheel the center bore is machined to sit snugly over the
                   raised flange on the hub. The wheel is centered by that
                   flange, and the vertical load of the truck passes through it.
-                  The lug nuts do one job — clamping.
+                  The lug nuts do one job: clamping.
                 </p>
                 <p>
                   On a{' '}
@@ -324,7 +324,7 @@ export default function FitmentPage() {
           <Reveal delay={0.1}>
             <p className="mt-12 max-w-3xl rounded-lg border-2 border-volt bg-volt-soft p-6 text-[1.02rem] leading-relaxed font-medium text-ink">
               An eight-lug pattern is the easy one to measure, because the studs
-              sit in opposing pairs. Five-lug patterns need the offset method —
+              sit in opposing pairs. Five-lug patterns need the offset method,
               but no dually on this page has five lugs, so you can ignore all of
               that.
             </p>
@@ -471,7 +471,7 @@ export default function FitmentPage() {
                   whole process.
                 </p>
                 <p>
-                  Purasynth ships wheels only — no tires and no TPMS sensors.
+                  Purasynth ships wheels only: no tires and no TPMS sensors.
                   Existing sensors usually transfer, but the sensor style should
                   be checked by whoever mounts the tires before the swap starts.
                   Mount and balance is a job for a shop with a dually-capable
@@ -495,7 +495,7 @@ export default function FitmentPage() {
                   Nobody expects a buyer to know their center bore off the top of
                   their head. At checkout there is an option called{' '}
                   <strong className="font-semibold text-ink">
-                    &ldquo;Not sure — check my fitment&rdquo;
+                    &ldquo;Not sure, check my fitment&rdquo;
                   </strong>
                   . Choose it, put your year, make, model and trim in the vehicle
                   box, and the pattern gets worked out here and confirmed in
@@ -512,7 +512,7 @@ export default function FitmentPage() {
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <ButtonLink
-                  href={`mailto:${site.email}?subject=${encodeURIComponent('Fitment check — year / make / model')}`}
+                  href={`mailto:${site.email}?subject=${encodeURIComponent('Fitment check: year / make / model')}`}
                   external
                   size="lg"
                 >

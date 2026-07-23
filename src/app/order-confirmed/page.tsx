@@ -7,7 +7,7 @@ import { buildMetadata } from '@/lib/seo'
 export const metadata: Metadata = buildMetadata({
   title: 'Order Received',
   description:
-    'Your Purasynth order is logged. Fitment gets confirmed first, then an invoice with a secure payment link is emailed — nothing has been charged.',
+    'Your Purasynth order is logged. Fitment gets confirmed first, then an invoice with a secure payment link is emailed. Nothing has been charged.',
   path: '/order-confirmed',
   noIndex: true,
 })
