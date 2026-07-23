@@ -1,0 +1,370 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Purasynth design tokens
+   Light, high-energy, youth-facing. No dark theme anywhere — the palette is
+   built on paper white and warm cream with three loud accents.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Neutrals */
+  --color-ink: #0b0b12;
+  --color-graphite: #2a2a38;
+  --color-slate: #55556a;
+  --color-mist: #a3a3b8;
+  --color-line: #e6e3f0;
+  --color-cream: #f7f4ee;
+  --color-haze: #f1eefb;
+  --color-paper: #ffffff;
+
+  /* Accents */
+  --color-volt: #6b3bff;
+  --color-volt-soft: #efe8ff;
+  --color-volt-deep: #4713d1;
+  --color-lime: #c8ff2e;
+  --color-lime-soft: #f2ffcf;
+  --color-coral: #ff5a3c;
+  --color-coral-soft: #ffe8e3;
+  /*
+   * Coral at full brightness is only 3.1:1 on paper, so it can fill a shape but
+   * must never carry text. `coral-deep` is the text-safe pair at 5.5:1 on paper
+   * and is what error messages, small labels and badge numerals use.
+   */
+  --color-coral-deep: #c2341b;
+  --color-sky: #24cfff;
+  --color-sky-soft: #ddf7ff;
+
+  /* Metal — used for the chrome/polished wheel treatments */
+  --color-chrome-100: #f4f5f8;
+  --color-chrome-300: #d3d7e0;
+  --color-chrome-500: #9aa1b1;
+
+  /* Type */
+  --font-display: var(--font-bricolage), 'Trebuchet MS', ui-sans-serif, sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, 'Courier New', monospace;
+
+  /* Radii */
+  --radius-xs: 0.5rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.125rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: 2.5rem;
+  --radius-blob: 3.5rem;
+
+  /* Elevation — soft, coloured, never grey-black */
+  --shadow-soft: 0 2px 8px rgb(107 59 255 / 0.06), 0 12px 32px rgb(11 11 18 / 0.06);
+  --shadow-lift: 0 4px 14px rgb(107 59 255 / 0.1), 0 24px 60px rgb(11 11 18 / 0.1);
+  --shadow-pop: 0 8px 0 0 var(--color-ink);
+  --shadow-pop-sm: 0 4px 0 0 var(--color-ink);
+
+  /* Motion */
+  --ease-spring: cubic-bezier(0.22, 1.2, 0.36, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 34s linear infinite;
+  --animate-marquee-slow: marquee 60s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 40s linear infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-spin-slower: spin 26s linear infinite;
+  --animate-float: float 7s var(--ease-spring) infinite;
+  --animate-float-slow: float 11s var(--ease-spring) infinite;
+  --animate-pulse-ring: pulse-ring 2.6s var(--ease-out-quint) infinite;
+  --animate-shimmer: shimmer 3.2s linear infinite;
+  --animate-blob: blob 18s ease-in-out infinite;
+  --animate-rise: rise 0.7s var(--ease-spring) both;
+  --animate-pop: pop 0.45s var(--ease-spring) both;
+  --animate-gradient: gradient-pan 9s ease infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -180% 0;
+  }
+  to {
+    background-position: 180% 0;
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    border-radius: 62% 38% 46% 54% / 54% 46% 54% 46%;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    border-radius: 38% 62% 58% 42% / 42% 62% 38% 58%;
+    transform: translate3d(2%, -3%, 0) rotate(6deg);
+  }
+  66% {
+    border-radius: 54% 46% 38% 62% / 62% 38% 62% 38%;
+    transform: translate3d(-2%, 2%, 0) rotate(-5deg);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-volt);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-color: var(--color-volt) var(--color-haze);
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-haze);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-volt);
+    border-radius: 99px;
+    border: 3px solid var(--color-haze);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+--------------------------------------------------------------------------- */
+
+/*
+ * The pan is decoration on top of the gradient, so it is gated rather than left
+ * to the global reduced-motion override — the text stays readable either way.
+ */
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-volt) 0%,
+    var(--color-coral) 45%,
+    var(--color-volt-deep) 100%
+  );
+  background-size: 220% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: var(--animate-gradient);
+  }
+}
+
+@utility text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-ink);
+  paint-order: stroke fill;
+}
+
+@utility surface-card {
+  background-color: var(--color-paper);
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility chrome-sheen {
+  background-image: linear-gradient(
+    115deg,
+    var(--color-chrome-100) 0%,
+    #ffffff 22%,
+    var(--color-chrome-300) 46%,
+    #ffffff 62%,
+    var(--color-chrome-500) 100%
+  );
+  background-size: 260% 100%;
+  animation: var(--animate-shimmer);
+}
+
+@utility noise-overlay {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgb(11 11 18 / 0.055) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+/* Hides content visually while leaving it for screen readers. */
+@utility visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll-driven reveal.
+   Progressive enhancement: elements start visible, and only opt into the
+   hidden-then-reveal treatment where animation-timeline is supported and the
+   visitor has not asked for reduced motion. That way a browser without
+   scroll-driven animation support never leaves content invisible.
+--------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .scroll-reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 26%;
+    }
+
+    .scroll-pop {
+      animation: pop linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+  }
+}
+
+/* A visitor who prefers reduced motion gets no looping or scroll animation. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
