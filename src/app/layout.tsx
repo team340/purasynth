@@ -59,15 +59,23 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false, address: false, email: false },
   category: 'automotive',
   /**
-   * Search Console ownership. Next renders this as
+   * Google property ownership. Next renders each entry as its own
    * <meta name="google-site-verification" content="..." /> in <head>.
    *
-   * Leave it in place permanently. Google re-checks ownership periodically and
-   * removing the tag drops verification, which takes Search Console access and
-   * any linked Merchant Center claim down with it.
+   * Two tokens, because Search Console and Merchant Center issue separate
+   * ones and each looks only for its own value. Having both present is
+   * expected and they do not conflict.
+   *
+   * Leave them in place permanently. Google re-checks ownership periodically,
+   * and deleting a token drops that property's verification.
    */
   verification: {
-    google: '-twRS9BaF-w0LEJV79cqQPl9Rd0abcMWkSyKZMpwCzo',
+    google: [
+      // Search Console
+      '-twRS9BaF-w0LEJV79cqQPl9Rd0abcMWkSyKZMpwCzo',
+      // Merchant Center
+      'G3pDf625jOCrjsOAznOVuapKMSdysxW3SvKkG0jl_Bc',
+    ],
   },
   openGraph: {
     type: 'website',
