@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Purasynth product feed for Google Merchant Center.
+
+  This is a SNAPSHOT, generated on 24 July 2026 from /product-feed.xml.
+  Use it only for a one-off manual upload.
+
+  Prefer the live feed instead:
+      https://purasynth.netlify.app/product-feed.xml
+  Merchant Center refetches that on a schedule, so a price edited in
+  src/lib/products.ts reaches Google without anyone re-uploading anything.
+  A feed price that disagrees with the price on the landing page is one of
+  the most common reasons an account gets suspended.
+
+  Regenerate this file with:  npm run feed:snapshot
+-->
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Purasynth dually wheel sets</title>
+    <link>https://purasynth.netlify.app</link>
+    <description>Heavy-duty dually wheel sets for Ford, RAM and GM one-ton trucks. Free freight, lower 48.</description>
+    <item>
+      <g:id>PSY-A127-GB-2285</g:id>
+      <title>A127 Innovator Dually Wheel Set, Gloss Black</title>
+      <description>A six-piece 22x8.25 dually wheel set in deep gloss black. Flow-formed A356-T6 aluminum, 4,500 lb load rating per wheel, hidden-hardware front caps and a stepped-lip window face that shows brake hardware without collecting road grime.</description>
+      <link>https://purasynth.netlify.app/product/a127-innovator-dually-gloss-black</link>
+      <g:link>https://purasynth.netlify.app/product/a127-innovator-dually-gloss-black</g:link>
+      <g:image_link>https://purasynth.netlify.app/products/a127-innovator-dually-gloss-black.webp</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>2899.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Purasynth</g:brand>
+      <g:mpn>PSY-A127-GB-2285</g:mpn>
+      <g:google_product_category>6090</g:google_product_category>
+      <g:product_type>Wheels &gt; Dually Wheel Sets &gt; Gloss Black</g:product_type>
+      <g:color>Gloss Black</g:color>
+      <g:material>Aluminum</g:material>
+      <g:size>22&quot; x 8.25&quot;</g:size>
+      <g:size_system>US</g:size_system>
+      <g:unit_pricing_measure>6 ct</g:unit_pricing_measure>
+      <g:is_bundle>yes</g:is_bundle>
+      <g:product_highlight>Flow-formed A356-T6 aluminum</g:product_highlight>
+      <g:product_highlight>4,500 lb load rating per wheel</g:product_highlight>
+      <g:product_highlight>Six-piece set with caps and hardware</g:product_highlight>
+      <g:product_highlight>Free freight to the lower 48</g:product_highlight>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Diameter</g:attribute_name>
+        <g:attribute_value>22 inches</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Width</g:attribute_name>
+        <g:attribute_value>8.25 inches</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Construction</g:attribute_name>
+        <g:attribute_value>Flow-formed A356-T6 aluminum</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Load rating</g:attribute_name>
+        <g:attribute_value>4,500 lb per wheel</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Center bore</g:attribute_name>
+        <g:attribute_value>Hub-centric, machined to application</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Set contents</g:attribute_name>
+        <g:attribute_value>6 wheels: 2 front, 4 rear</g:attribute_value>
+      </g:product_detail>
+      <g:custom_label_0>Gloss Black</g:custom_label_0>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:price>0.00 USD</g:price>
+      </g:shipping>
+    </item>
+    <item>
+      <g:id>PSY-MSH8-PL-2285</g:id>
+      <title>Mesh 8 Dually Wheel Set, Mirror Polished</title>
+      <description>A six-piece 22x8.25 dually wheel set in hand-finished mirror polish. Twenty-spoke mesh face, 4,500 lb load rating per wheel, and a clear-coated aluminum surface that keeps its shine without the flaking that kills plated wheels.</description>
+      <link>https://purasynth.netlify.app/product/mesh-8-dually-polished</link>
+      <g:link>https://purasynth.netlify.app/product/mesh-8-dually-polished</g:link>
+      <g:image_link>https://purasynth.netlify.app/products/mesh-8-dually-polished.webp</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>3199.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>Purasynth</g:brand>
+      <g:mpn>PSY-MSH8-PL-2285</g:mpn>
+      <g:google_product_category>6090</g:google_product_category>
+      <g:product_type>Wheels &gt; Dually Wheel Sets &gt; Mirror Polished</g:product_type>
+      <g:color>Mirror Polished</g:color>
+      <g:material>Aluminum</g:material>
+      <g:size>22&quot; x 8.25&quot;</g:size>
+      <g:size_system>US</g:size_system>
+      <g:unit_pricing_measure>6 ct</g:unit_pricing_measure>
+      <g:is_bundle>yes</g:is_bundle>
+      <g:product_highlight>Hand-polished, clear-coated aluminum</g:product_highlight>
+      <g:product_highlight>4,500 lb load rating per wheel</g:product_highlight>
+      <g:product_highlight>Twenty-spoke mesh face</g:product_highlight>
+      <g:product_highlight>Free freight to the lower 48</g:product_highlight>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Diameter</g:attribute_name>
+        <g:attribute_value>22 inches</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Width</g:attribute_name>
+        <g:attribute_value>8.25 inches</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Construction</g:attribute_name>
+        <g:attribute_value>Flow-formed A356-T6 aluminum</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Load rating</g:attribute_name>
+        <g:attribute_value>4,500 lb per wheel</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Center bore</g:attribute_name>
+        <g:attribute_value>Hub-centric, machined to application</g:attribute_value>
+      </g:product_detail>
+      <g:product_detail>
+        <g:section_name>Specifications</g:section_name>
+        <g:attribute_name>Set contents</g:attribute_name>
+        <g:attribute_value>6 wheels: 2 front, 4 rear</g:attribute_value>
+      </g:product_detail>
+      <g:custom_label_0>Mirror Polished</g:custom_label_0>
+      <g:shipping>
+        <g:country>US</g:country>
+        <g:price>0.00 USD</g:price>
+      </g:shipping>
+    </item>
+  </channel>
+</rss>

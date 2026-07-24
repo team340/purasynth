@@ -58,6 +58,17 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
   formatDetection: { telephone: false, address: false, email: false },
   category: 'automotive',
+  /**
+   * Search Console ownership. Next renders this as
+   * <meta name="google-site-verification" content="..." /> in <head>.
+   *
+   * Leave it in place permanently. Google re-checks ownership periodically and
+   * removing the tag drops verification, which takes Search Console access and
+   * any linked Merchant Center claim down with it.
+   */
+  verification: {
+    google: '-twRS9BaF-w0LEJV79cqQPl9Rd0abcMWkSyKZMpwCzo',
+  },
   openGraph: {
     type: 'website',
     siteName: site.name,

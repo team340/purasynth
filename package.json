@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "feed:snapshot": "curl -sf https://purasynth.netlify.app/product-feed.xml -o merchant-feed.xml && echo \"merchant-feed.xml refreshed from the live feed\""
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.8",
