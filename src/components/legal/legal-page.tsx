@@ -224,10 +224,27 @@ export function LegalPage({
 
       <section className="py-16 sm:py-20 lg:py-24">
         <Container size="wide">
-          <div className="grid gap-12 lg:grid-cols-[16rem_1fr] lg:gap-16">
+          <div className="grid gap-8 md:grid-cols-[15rem_1fr] md:gap-12 lg:grid-cols-[16rem_1fr] lg:gap-16">
+            {/*
+             * The two column split starts at `md`, not `lg`.
+             *
+             * It used to start at `lg` (1024px). Anything narrower stacked the
+             * contents list above the copy, where it ran about 380px tall and
+             * pushed the first section clean off the bottom of the screen. A
+             * visitor landing on a policy page at, say, 1000px wide saw a wall
+             * of link text, blank space beside it, and no policy at all. It
+             * read as a broken page rather than a contents list, and 768 to
+             * 1023px is an ordinary laptop window once display scaling is on.
+             *
+             * When it does still stack, below `md`, the list scrolls inside a
+             * capped box instead. Two columns was tried first and did not
+             * help: at 375px the headings wrap so hard that two columns came
+             * out taller than one. Capping the height is what actually gets
+             * the copy near the top of the screen on a phone.
+             */}
             <nav
               aria-label="On this page"
-              className="h-max lg:sticky lg:top-28"
+              className="h-max max-h-52 overflow-y-auto rounded-lg border-2 border-line bg-cream p-5 md:sticky md:top-28 md:max-h-none md:overflow-visible md:rounded-none md:border-0 md:bg-transparent md:p-0"
             >
               <p className="font-mono text-[0.68rem] font-bold tracking-[0.18em] text-slate uppercase">
                 On this page
