@@ -48,7 +48,19 @@ export function Reveal({
   delay = 0,
   duration = 0.65,
   direction = 'up',
-  amount = 0.25,
+  /**
+   * How much of the element must be in view before it reveals, as a fraction
+   * of its own height.
+   *
+   * Defaults to 0, meaning "as soon as any part of it enters". Raise it only
+   * on elements you know stay shorter than a viewport. The value is a
+   * fraction of the element's OWN height, so on anything tall it quietly
+   * becomes unreachable: at 0.25 an element 4000px tall needs 1000px of
+   * itself on screen simultaneously, and on a short window it may never get
+   * there. It then stays at opacity 0 indefinitely, present in the DOM and
+   * correctly positioned but invisible, which is a hard failure to diagnose.
+   */
+  amount = 0,
   as = 'div',
 }: RevealProps) {
   const reduceMotion = useReducedMotion()
@@ -99,7 +111,20 @@ export function Stagger({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      /*
+       * `amount: 0` means "reveal as soon as any part of the container enters
+       * the viewport", which is the only threshold that is safe here.
+       *
+       * It was 0.15. Because `amount` is a fraction of the element's OWN
+       * height, that is fine on a card and dangerous on a wrapper: Stagger
+       * wraps a whole page of sections, and on /returns-policy that container
+       * is about 3800px tall, so 0.15 demanded 570px of it be on screen at
+       * once. Nothing guarantees that on a short window, and if the parent
+       * never counts as in view, none of the children ever leave their hidden
+       * variant and the whole block stays at opacity 0. Since the parent has
+       * no visual state of its own, there is nothing to gain from waiting.
+       */
+      viewport={{ once: true, amount: 0 }}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
