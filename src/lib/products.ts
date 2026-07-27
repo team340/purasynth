@@ -36,7 +36,22 @@ export interface Product {
    * cannot be substantiated is a pricing claim, not a discount.
    */
   readonly compareAtPrice: number | null
+  /** Cutout with a transparent background, for the site's coloured panels. */
   readonly image: string
+  /**
+   * The same shot flattened onto solid white, for the Merchant Center feed.
+   *
+   * Kept separate from `image` because the two consumers want opposite things.
+   * Google's image guidelines permit a transparent background but warn it may
+   * be composited onto black, and the A127 is gloss black, so on black it
+   * loses every edge. A white plate is what the feed has to carry.
+   *
+   * The filename is versioned. These are served with
+   * `Cache-Control: immutable, max-age=31536000`, so replacing the bytes at an
+   * existing URL can be ignored by caches for a year. Changing this image
+   * means bumping the suffix, not overwriting the file.
+   */
+  readonly feedImage: string
   readonly imageAlt: string
   readonly accent: 'violet' | 'lime' | 'coral'
   /**
@@ -110,6 +125,7 @@ export const products: readonly Product[] = [
     price: 289900,
     compareAtPrice: null,
     image: '/products/a127-innovator-dually-gloss-black.webp',
+    feedImage: '/products/feed/a127-innovator-dually-gloss-black-v2.jpg',
     imageAlt:
       'Purasynth A127 Innovator 22x8.25 dually wheels in gloss black, front and rear faces shown',
     accent: 'violet',
@@ -170,6 +186,7 @@ export const products: readonly Product[] = [
     price: 319900,
     compareAtPrice: null,
     image: '/products/mesh-8-dually-polished.webp',
+    feedImage: '/products/feed/mesh-8-dually-polished-v2.jpg',
     imageAlt:
       'Purasynth Mesh 8 22x8.25 dually wheels in mirror polished aluminum, front and rear faces shown',
     accent: 'lime',

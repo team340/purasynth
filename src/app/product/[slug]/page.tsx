@@ -45,7 +45,11 @@ export async function generateMetadata({
     title: product.name,
     description: product.description,
     path: `/product/${product.slug}`,
-    image: product.image,
+    // The white-plate JPEG rather than the transparent cutout. Share cards get
+    // rendered on whatever background the app uses, often a dark one, and a
+    // gloss black wheel on a dark card disappears. WebP support across social
+    // scrapers is also patchier than JPEG.
+    image: product.feedImage,
     keywords: product.keywords,
   })
 }

@@ -145,7 +145,10 @@ export function productSchema(product: Product): Record<string, unknown> {
     sku: product.sku,
     mpn: product.sku,
     description: product.description,
-    image: [absoluteUrl(product.image)],
+    // The white-plate version, matching the Merchant feed. Google reads this
+    // for rich results and free listings, so it should not disagree with the
+    // feed, and a transparent cutout can be composited onto black here too.
+    image: [absoluteUrl(product.feedImage)],
     url,
     brand: { '@type': 'Brand', name: site.name },
     category: 'Automotive Wheels',

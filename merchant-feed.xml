@@ -2,17 +2,21 @@
 <!--
   Purasynth product feed for Google Merchant Center.
 
-  This is a SNAPSHOT, generated on 24 July 2026 from /product-feed.xml.
-  Use it only for a one-off manual upload.
+  SNAPSHOT, regenerated 25 July 2026. For a one-off manual upload only.
 
-  Prefer the live feed instead:
+  Prefer the live feed:
       https://purasynth.netlify.app/product-feed.xml
   Merchant Center refetches that on a schedule, so a price edited in
   src/lib/products.ts reaches Google without anyone re-uploading anything.
-  A feed price that disagrees with the price on the landing page is one of
-  the most common reasons an account gets suspended.
+  A feed price that disagrees with the landing page is one of the most
+  common reasons an account is suspended.
 
-  Regenerate this file with:  npm run feed:snapshot
+  Note on images: g:image_link points at /products/feed/*.jpg, which is the
+  product shot on solid white. The site itself uses a transparent cutout of
+  the same shot, which Google may composite onto black. Do not repoint the
+  feed at those.
+
+  Regenerate with:  npm run feed:snapshot
 -->
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
   <channel>
@@ -25,7 +29,7 @@
       <description>A six-piece 22x8.25 dually wheel set in deep gloss black. Flow-formed A356-T6 aluminum, 4,500 lb load rating per wheel, hidden-hardware front caps and a stepped-lip window face that shows brake hardware without collecting road grime.</description>
       <link>https://purasynth.netlify.app/product/a127-innovator-dually-gloss-black</link>
       <g:link>https://purasynth.netlify.app/product/a127-innovator-dually-gloss-black</g:link>
-      <g:image_link>https://purasynth.netlify.app/products/a127-innovator-dually-gloss-black.webp</g:image_link>
+      <g:image_link>https://purasynth.netlify.app/products/feed/a127-innovator-dually-gloss-black-v2.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>2899.00 USD</g:price>
       <g:condition>new</g:condition>
@@ -85,7 +89,7 @@
       <description>A six-piece 22x8.25 dually wheel set in hand-finished mirror polish. Twenty-spoke mesh face, 4,500 lb load rating per wheel, and a clear-coated aluminum surface that keeps its shine without the flaking that kills plated wheels.</description>
       <link>https://purasynth.netlify.app/product/mesh-8-dually-polished</link>
       <g:link>https://purasynth.netlify.app/product/mesh-8-dually-polished</g:link>
-      <g:image_link>https://purasynth.netlify.app/products/mesh-8-dually-polished.webp</g:image_link>
+      <g:image_link>https://purasynth.netlify.app/products/feed/mesh-8-dually-polished-v2.jpg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>3199.00 USD</g:price>
       <g:condition>new</g:condition>

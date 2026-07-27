@@ -87,7 +87,9 @@ function itemXml(product: Product): string {
     // different ones, so sending both removes a whole class of false failure.
     tag('link', url, 6),
     tag('g:link', url, 6),
-    tag('g:image_link', absoluteUrl(product.image), 6),
+    // `feedImage`, not `image`: the site's cutout is transparent, and Google
+    // may composite that onto black, which erases a gloss black wheel.
+    tag('g:image_link', absoluteUrl(product.feedImage), 6),
 
     tag('g:availability', product.inStock ? 'in_stock' : 'out_of_stock', 6),
     tag('g:price', `${priceInDollars(product.price)} ${site.currency}`, 6),
