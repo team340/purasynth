@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { useEffect, useState, useSyncExternalStore } from 'react'
 import { Check, Copy, Mail, PartyPopper } from 'lucide-react'
 
+import { OrderConversion } from '@/components/analytics/order-conversion'
 import {
   getLastPaymentMethodServerSnapshot,
   readLastPaymentMethod,
@@ -105,6 +106,8 @@ export function OrderConfirmedContent({
 
   return (
     <div className="flex flex-col gap-14">
+      {orderNumber ? <OrderConversion orderNumber={orderNumber} /> : null}
+
       <div className="relative overflow-hidden rounded-xl border-2 border-ink bg-paper px-6 py-14 shadow-[0_8px_0_0_var(--color-ink)] sm:px-12 sm:py-20">
         {!reduceMotion ? (
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">

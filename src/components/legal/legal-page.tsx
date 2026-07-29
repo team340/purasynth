@@ -49,10 +49,30 @@ export interface LegalUpdated {
   readonly label: string
 }
 
-/** Publication date shared by every policy on the site. */
+/**
+ * Publication date for policies that have not changed since launch.
+ *
+ * `updated` is a per-page prop rather than a single site-wide constant on
+ * purpose. Bumping one date for all seven pages would claim documents changed
+ * on a day they did not, and on a privacy policy that stamp is the thing a
+ * reader uses to decide whether to read it again.
+ */
 export const LEGAL_UPDATED: LegalUpdated = {
   iso: '2026-07-23',
   label: '23 July 2026',
+}
+
+/**
+ * The day the Google Ads tag was added.
+ *
+ * Used by the cookie policy and the privacy policy, which both changed
+ * materially that day: advertising cookies, a third-party script, and a CPRA
+ * sharing disclosure with an opt-out route. The other five policies are
+ * untouched and keep `LEGAL_UPDATED`.
+ */
+export const LEGAL_UPDATED_ADS: LegalUpdated = {
+  iso: '2026-07-29',
+  label: '29 July 2026',
 }
 
 interface LegalPageProps {

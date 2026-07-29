@@ -20,6 +20,7 @@ import {
 } from '@/components/checkout/checkout-values'
 import { validateStep } from '@/components/checkout/checkout-validation'
 import { HoneypotField } from '@/components/checkout/honeypot-field'
+import { rememberOrderTotal } from '@/components/checkout/last-order-total'
 import { rememberPaymentMethod } from '@/components/checkout/last-payment-method'
 import { PaymentStep } from '@/components/checkout/payment-step'
 import { ReviewStep } from '@/components/checkout/review-step'
@@ -60,7 +61,7 @@ const FOCUS_ATTEMPTS = 60
  */
 export function CheckoutForm() {
   const router = useRouter()
-  const { cart, hydrated, clear } = useCart()
+  const { cart, hydrated, clear, totals } = useCart()
   const reduceMotion = useReducedMotion()
 
   const base = useId()
@@ -260,6 +261,10 @@ export function CheckoutForm() {
       setStatus('done')
       if (values.paymentPreference)
         rememberPaymentMethod(values.paymentPreference)
+
+      // Read the total before clear(), or the conversion reports zero.
+      rememberOrderTotal(data.orderNumber, totals.total)
+
       clear()
       router.push(
         `/order-confirmed?order=${encodeURIComponent(data.orderNumber)}`,

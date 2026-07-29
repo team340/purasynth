@@ -5,6 +5,7 @@ import { CartDrawer } from '@/components/cart/cart-drawer'
 import { CartProvider } from '@/components/cart/cart-provider'
 import { SiteFooter } from '@/components/layout/site-footer'
 import { SiteHeader } from '@/components/layout/site-header'
+import { GoogleAdsTag } from '@/components/analytics/google-ads'
 import { ScrollProgress } from '@/components/motion/scroll-progress'
 import { JsonLd } from '@/components/seo/json-ld'
 import { storeSchema, websiteSchema } from '@/lib/seo'
@@ -137,6 +138,8 @@ export default function RootLayout({
           <SiteFooter />
           <CartDrawer />
         </CartProvider>
+
+        <GoogleAdsTag />
       </body>
     </html>
   )

@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 
 import {
-  LEGAL_UPDATED,
+  LEGAL_UPDATED_ADS,
   LegalPage,
   type LegalSection,
 } from '@/components/legal/legal-page'
@@ -10,7 +11,7 @@ import { site } from '@/lib/site'
 
 const PAGE_TITLE = 'Cookie Policy'
 const PAGE_DESCRIPTION =
-  'Purasynth sets no advertising, retargeting or third-party analytics cookies. The only browser storage used is a cart key in your own localStorage and a sign-in cookie for the owner’s order dashboard. Here is exactly what each one does.'
+  'Purasynth runs the Google Ads tag, so Google advertising cookies in the _gcl_ family are set and pageviews are reported. The rest is a cart key in your own localStorage and a sign-in cookie for the owner’s order dashboard. Here is what each one does, and how to turn the advertising cookies off.'
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -18,11 +19,39 @@ export const metadata: Metadata = buildMetadata({
   path: '/cookie-policy',
   keywords: [
     'cookie policy',
-    'no tracking cookies',
-    'strictly necessary cookies',
+    'google ads cookies',
+    'gcl cookie',
+    'advertising cookie opt out',
     'localStorage cart',
   ],
 })
+
+/**
+ * Inline link out to a domain Purasynth does not control.
+ *
+ * Every link on this page goes somewhere a reader has to be able to check for
+ * themselves (Google's own description of what it collects, and the two opt-out
+ * pages), so they are deliberately shown as full addresses rather than hidden
+ * behind words like "here".
+ */
+function ExternalLink({
+  href,
+  children,
+}: {
+  readonly href: string
+  readonly children: ReactNode
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold text-volt-deep underline decoration-2 underline-offset-4 transition-colors hover:text-ink"
+    >
+      {children}
+    </a>
+  )
+}
 
 const sections: readonly LegalSection[] = [
   {
@@ -32,13 +61,13 @@ const sections: readonly LegalSection[] = [
       {
         kind: 'callout',
         value:
-          'This site uses strictly necessary browser storage only. There is no advertising cookie, no retargeting pixel, no Google Analytics, no Meta pixel, no TikTok pixel, no heatmap recorder and no third-party tracker of any kind on any page.',
-        tone: 'lime',
+          'This site runs the Google Ads tag. It loads a script from googletagmanager.com, sets Google advertising cookies in the _gcl_ family, and tells Google that a page here was viewed. That is how the owner can tell which ads led to orders, and it is what makes it possible to show you a Purasynth ad after you have left.',
+        tone: 'volt',
       },
       {
         kind: 'text',
         value:
-          'Two pieces of browser storage exist across the whole site. One holds your cart on your own device. The other only ever appears on the owner’s computer, after signing in to the order dashboard. That is the complete list, and both are described in full below.',
+          'Past that, the list is short. Your cart sits in your own browser storage. A sign-in cookie exists for the order dashboard and only ever appears on the owner’s computer. There is no Google Analytics, no Meta pixel, no TikTok pixel and no session recorder. Every item is described in full below, including how to switch the advertising cookies off without breaking anything.',
       },
     ],
   },
@@ -57,12 +86,12 @@ const sections: readonly LegalSection[] = [
           {
             term: 'Cookie',
             detail:
-              'A small piece of data your browser attaches to every request it sends to the site. Because it travels with each request, a server can read it. This is what tracking is normally built on.',
+              'A small piece of data your browser attaches to every request it sends to the site. Because it travels with each request, a server can read it. This is what advertising measurement is normally built on, and it is what the Google tag uses.',
           },
           {
             term: 'localStorage',
             detail:
-              'A key-and-value store that lives in your browser and is never sent anywhere automatically. A server cannot read it. It only leaves your device if a page deliberately puts it into a request.',
+              'A key-and-value store that lives in your browser and is never sent anywhere automatically. A server cannot request it. It only leaves your device if a page deliberately puts it into a request.',
           },
         ],
       },
@@ -70,6 +99,94 @@ const sections: readonly LegalSection[] = [
         kind: 'text',
         value:
           'Your cart uses localStorage rather than a cookie precisely because a cart is your business until you choose to submit an order.',
+      },
+    ],
+  },
+  {
+    id: 'google-ads-tag',
+    heading: 'The Google Ads tag',
+    blocks: [
+      {
+        kind: 'text',
+        value:
+          'This is the one thing on the site that is not strictly necessary, so it gets the most detail.',
+      },
+      {
+        kind: 'terms',
+        items: [
+          {
+            term: 'Type',
+            detail:
+              'A third-party script, plus the cookies it writes. Not strictly necessary, and not needed to browse or to order.',
+          },
+          {
+            term: 'Who runs it',
+            detail:
+              'Google. The tag reports to a Google Ads account owned by Purasynth, and Google handles that data under its own terms as well as for its own purposes.',
+          },
+          {
+            term: 'What loads',
+            detail:
+              'gtag.js, fetched from www.googletagmanager.com once the page has finished loading.',
+          },
+          {
+            term: 'What it records',
+            detail:
+              'That a page on this site was viewed, together with what a browser sends with any request: the page address, the page you arrived from, an approximate location derived from your IP address, and your device and browser.',
+          },
+          {
+            term: 'Cookies it sets',
+            detail:
+              'The _gcl_ family, written into your browser under this site’s own domain. _gcl_au is the usual one. Google writes and reads these, not Purasynth.',
+          },
+          {
+            term: 'Why it exists',
+            detail:
+              'So the owner can tell which ads actually produced orders instead of guessing at where the ad budget went, and so Purasynth ads can be shown to people who have visited the site before. That second part is remarketing.',
+          },
+        ],
+      },
+      {
+        kind: 'subheading',
+        value: 'How long these cookies last',
+      },
+      {
+        kind: 'text',
+        value:
+          'The conversion linker cookie, _gcl_au, typically lasts about 90 days from your most recent visit. Purasynth does not pick that number. Google sets these cookies, reads them, and decides which ones exist and how long each one lives, and it can change that without anything on this site changing.',
+      },
+      {
+        kind: 'text',
+        value:
+          'So rather than print a confident table of cookie names and durations here that would quietly go out of date, the honest position is this: the _gcl_ family and the roughly 90 day linker cookie are what is known, and the current authoritative list is Google’s to publish, not Purasynth’s to guess at.',
+      },
+      {
+        kind: 'text',
+        value: (
+          <>
+            Google sets out what it collects through tags on sites like this one,
+            and what it then does with it, at{' '}
+            <ExternalLink href="https://policies.google.com/technologies/partner-sites">
+              policies.google.com/technologies/partner-sites
+            </ExternalLink>
+            . Read that if this matters to you. It covers Google’s side of the
+            arrangement, which is the side Purasynth does not control.
+          </>
+        ),
+      },
+      {
+        kind: 'subheading',
+        value: 'Orders reported as conversions',
+      },
+      {
+        kind: 'text',
+        value:
+          'The tag is also wired to report a completed order to Google as a conversion, sending the order number, the order total and the currency. The order number goes with it so that refreshing the confirmation page cannot count one order twice. No name, no email and no address is sent with it.',
+      },
+      {
+        kind: 'text',
+        value:
+          'That part is switched off at the time of writing, because it needs a conversion label from Google that has not been set up yet. When it is switched on, order numbers and order values will start being sent to Google, and this section will be edited to say so on the same day rather than left standing as it is.',
       },
     ],
   },
@@ -103,7 +220,7 @@ const sections: readonly LegalSection[] = [
           {
             term: 'Who can read it',
             detail:
-              'Only pages on this site, in your browser. It is never transmitted anywhere on its own, and no server can request it.',
+              'Pages on this site, in your browser. Unlike a cookie it does not travel with requests, so no server can ask for it. Any script a page loads can read localStorage in principle, and the Google tag is such a script, so worth stating plainly: Purasynth never passes your cart contents to it.',
           },
         ],
       },
@@ -159,14 +276,19 @@ const sections: readonly LegalSection[] = [
     heading: 'What this site does not do',
     blocks: [
       {
+        kind: 'text',
+        value:
+          'The Google tag is the whole of the third-party story. It is worth being specific about what did not come with it.',
+      },
+      {
         kind: 'bullets',
         items: [
-          'No advertising or retargeting cookies. You will not be followed around the internet by a wheel.',
-          'No third-party analytics. There is no Google Analytics, no Plausible, no Fathom and no in-house visitor tracker.',
-          'No session recording or heatmaps. Nobody is watching a replay of your mouse.',
-          'No social media pixels or share widgets that phone home.',
-          'No cross-site identifiers, no fingerprinting, no data brokers, no audience lists.',
-          'No fonts, scripts or stylesheets loaded from a third-party CDN at page load. Typefaces are bundled with the site at build time, so your browser does not call out to another domain to render a page.',
+          'No Google Analytics, no Plausible, no Fathom and no in-house visitor tracker. Measuring ad spend is the entire job of the one tag that is here.',
+          'No session recording and no heatmaps. Nobody is watching a replay of your mouse.',
+          'No Meta pixel, no TikTok pixel, and no social share widgets that phone home.',
+          'No fingerprinting script written into this site, and no customer data bought from a data broker or sold to one.',
+          'No advertising cookie is required to use the shop. Block it and browsing, fitment and checkout all work exactly the same, cart included.',
+          'No fonts or stylesheets pulled from a third-party CDN. Typefaces are bundled with the site at build time, so rendering a page does not call out to another domain. The Google tag is the exception to that rule, and it is a script, described above.',
         ],
       },
       {
@@ -177,18 +299,62 @@ const sections: readonly LegalSection[] = [
     ],
   },
   {
-    id: 'why-no-banner',
-    heading: 'Why there is no cookie banner',
+    id: 'consent-and-the-banner',
+    heading: 'Consent, and why there is no banner',
     blocks: [
       {
         kind: 'text',
         value:
-          'Consent banners exist because sites want to place non-essential cookies. Strictly necessary storage (the kind without which the thing you asked for cannot work) does not require consent, and there is nothing else here to consent to.',
+          'An earlier version of this page argued that there was nothing here to consent to. That argument no longer holds, and it is not worth pretending otherwise. An advertising cookie is exactly the sort of non-essential thing consent banners were invented for, so the question deserves a straight answer rather than a dodge.',
       },
       {
         kind: 'text',
         value:
-          'Rather than show a banner asking permission for trackers that do not exist, this page tells you what the two entries are. If a non-essential cookie is ever introduced, a proper consent mechanism will appear with it and this page will change on the same day.',
+          'Purasynth sells and ships only within the United States. US state privacy law, California’s CPRA included, is built around telling you what is happening and giving you a way to opt out, rather than asking permission before anything loads. On that basis there is no banner on this site today.',
+      },
+      {
+        kind: 'text',
+        value:
+          'That is a judgement call about which rules apply to a shop that only ships to the lower 48. It is not a claim that the question is closed, and it is not legal advice. If you are reading this somewhere with a stricter rule, the objection is fair, and the practical answer is the same either way: the controls in the next section work wherever you are, and turning the tag off costs you nothing here. If a banner turns out to be the right thing to have, it will appear and this page will change with it.',
+      },
+    ],
+  },
+  {
+    id: 'your-choices',
+    heading: 'Turning the advertising cookies off',
+    blocks: [
+      {
+        kind: 'text',
+        value:
+          'Three routes, none of which need permission from Purasynth or an email to anyone.',
+      },
+      {
+        kind: 'bullets',
+        items: [
+          'Your browser. Every current browser can block or clear cookies for a single site, and most can block third-party scripts outright. Blocking cookies for this domain stops the _gcl_ family. Your cart is localStorage rather than a cookie, so it keeps working.',
+          <>
+            Google’s own ad settings, at{' '}
+            <ExternalLink href="https://adssettings.google.com">
+              adssettings.google.com
+            </ExternalLink>
+            . Personalised advertising can be turned off there across everything
+            Google shows you, not just what comes from this site.
+          </>,
+          <>
+            The industry opt-out at{' '}
+            <ExternalLink href="https://optout.aboutads.info">
+              optout.aboutads.info
+            </ExternalLink>
+            , which covers a list of advertising companies in one place rather
+            than one at a time.
+          </>,
+          'A content blocker or tracker-blocking extension stops gtag.js loading at all. The site is built to work without it, so nothing on it degrades if you run one.',
+        ],
+      },
+      {
+        kind: 'text',
+        value:
+          'Opting out changes advertising and nothing else. It has no effect on an order already placed, on the fitment check, on the invoice, or on the warranty. Those run on email and the order record, not on a cookie.',
       },
     ],
   },
@@ -200,8 +366,9 @@ const sections: readonly LegalSection[] = [
         kind: 'bullets',
         items: [
           'Emptying your cart on the cart page clears the stored entry immediately.',
-          'Clearing site data for this domain in your browser settings removes everything this site has stored, with no other effect.',
-          'Browsing in a private or incognito window means the cart is discarded when you close it.',
+          'Clearing site data for this domain in your browser settings removes everything stored under it, the _gcl_ cookies included, with no other effect.',
+          'Browsing in a private or incognito window means all of it, cart and advertising cookies alike, is thrown away when you close the window.',
+          'Cookies Google holds on its own domains, from your use of Google generally, are not stored under this domain, so clearing this site will not touch them. Google’s ad settings are the place for those.',
           'Blocking storage for this site entirely still lets you browse and read every page. The cart simply will not persist between page loads.',
         ],
       },
@@ -224,11 +391,11 @@ export default function CookiePolicyPage() {
   return (
     <LegalPage
       title={PAGE_TITLE}
-      eyebrow="Two entries. That is all."
-      intro="No advertising cookies, no analytics, no pixels, no banner asking you to accept trackers that were never installed. Just a cart saved on your own device and a sign-in cookie the owner uses."
+      eyebrow="What is actually set."
+      intro="This site runs the Google Ads tag, so Google sets advertising cookies and is told that you looked at a page. Alongside that there is a cart saved on your own device and a sign-in cookie only the owner ever gets. Here is each one, and how to switch the advertising off."
       path="/cookie-policy"
       description={PAGE_DESCRIPTION}
-      updated={LEGAL_UPDATED}
+      updated={LEGAL_UPDATED_ADS}
       sections={sections}
       tone="sky"
     />
